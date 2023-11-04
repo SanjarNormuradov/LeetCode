@@ -1,3 +1,12 @@
+/*
+PROBLEM STATEMENT:
+
+How many horses are there a string with multiple 'neighs' in it;
+Given a string (of horse sound 'neigh'),
+determine the minimum number of horses possible.
+'Nneigheigh' should return 2, 'neighneigh' returns 1.
+*/
+
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -34,8 +43,10 @@ int min_horses(const std::string& sound) {
 int main() {
     using namespace std;
 
-    cout << min_horses("nneigheigh") << endl;
-    cout << min_horses("neighneigh") << endl;
+    cout << "'neigh': " << min_horses("neigh") << endl;
+    cout << "'neighneigh': " << min_horses("neighneigh") << endl;
+    cout << "'nneigheigh': " << min_horses("nneigheigh") << endl;
+    cout << "'nneingheighigh': " << min_horses("nneingheighigh") << endl;
     
     return 0;
 }
