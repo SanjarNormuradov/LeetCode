@@ -1,34 +1,39 @@
-Start testing: Nov 07 00:03 PST
+Start testing: Nov 07 21:07 PST
 ----------------------------------------------------------
-3/3 Testing: push_pop_stack_test
-3/3 Test: push_pop_stack_test
-Command: "/home/sanjar/UW/LeetCode/build/strings/02_target_n_PushPop_stack/push_pop_stack_test"
-Directory: /home/sanjar/UW/LeetCode/build/strings/02_target_n_PushPop_stack
-"push_pop_stack_test" start time: Nov 07 00:03 PST
+2/4 Testing: test_max_monster_eliminated
+2/4 Test: test_max_monster_eliminated
+Command: "/home/sanjar/UW/LeetCode/build/arrays/02_max_monster_eliminated/test_max_monster_eliminated"
+Directory: /home/sanjar/UW/LeetCode/build/arrays/02_max_monster_eliminated
+"test_max_monster_eliminated" start time: Nov 07 21:07 PST
 Output:
 ----------------------------------------------------------
-[==========] Running 4 tests from 1 test suite.
+[==========] Running 3 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 4 tests from BuildArrayTest
-[ RUN      ] BuildArrayTest.Push
-[       OK ] BuildArrayTest.Push (0 ms)
-[ RUN      ] BuildArrayTest.PushPush
-[       OK ] BuildArrayTest.PushPush (0 ms)
-[ RUN      ] BuildArrayTest.PushPushPopPush
-[       OK ] BuildArrayTest.PushPushPopPush (0 ms)
-[ RUN      ] BuildArrayTest.PushPopPush
-[       OK ] BuildArrayTest.PushPopPush (0 ms)
-[----------] 4 tests from BuildArrayTest (0 ms total)
+[----------] 3 tests from TestMaxMonsterEliminated
+[ RUN      ] TestMaxMonsterEliminated.test1_LowSpeed_LongDistance
+[       OK ] TestMaxMonsterEliminated.test1_LowSpeed_LongDistance (0 ms)
+[ RUN      ] TestMaxMonsterEliminated.test2_LowSpeed_ShortDistance
+[       OK ] TestMaxMonsterEliminated.test2_LowSpeed_ShortDistance (0 ms)
+[ RUN      ] TestMaxMonsterEliminated.test3_HighSpeed_ShortDistance
+[       OK ] TestMaxMonsterEliminated.test3_HighSpeed_ShortDistance (0 ms)
+[----------] 3 tests from TestMaxMonsterEliminated (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 4 tests.
+[==========] 3 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+
+Test Time Results:
+
+test1_LowSpeed_LongDistance                                 time: 2.29e-05 s
+test2_LowSpeed_ShortDistance                                time: 2.94e-06 s
+test3_HighSpeed_ShortDistance                               time: 2.65e-06 s
+
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"push_pop_stack_test" end time: Nov 07 00:03 PST
-"push_pop_stack_test" time elapsed: 00:00:00
+"test_max_monster_eliminated" end time: Nov 07 21:07 PST
+"test_max_monster_eliminated" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Nov 07 00:03 PST
+End testing: Nov 07 21:07 PST

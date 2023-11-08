@@ -1,4 +1,10 @@
-flood_fill_test 2 0.00118642
+flood_fill_test 10 0.00025863
 neigh_test 1 0.00209537
 push_pop_stack_test 1 0.00270311
+max_monster_eliminated_test 34 7.67216e-05
+test_max_monster_eliminated 5 0.000498834
+test_flood_fill 3 0.000966063
+test_push_pop_stack 1 0.00175807
+test_push_pop_stack_target_n 2 0.00116081
+test_neigh 1 0.00266815
 ---
