@@ -8,5 +8,5 @@ test_push_pop_stack 1 0.00175807
 test_push_pop_stack_target_n 2 0.00116081
 test_neigh 1 0.00266815
 test_restore_from_pairs 0 0
+test_frogs_croak 12 0.000203491
 ---
-test_restore_from_pairs

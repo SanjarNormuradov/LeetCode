@@ -1,63 +1,42 @@
-Start testing: Nov 09 20:35 PST
+Start testing: Nov 09 23:54 PST
 ----------------------------------------------------------
-3/5 Testing: test_restore_from_pairs
-3/5 Test: test_restore_from_pairs
-Command: "/home/sanjar/UW/LeetCode/build/arrays/03_restore_from_pairs/test_restore_from_pairs"
-Directory: /home/sanjar/UW/LeetCode/build/arrays/03_restore_from_pairs
-"test_restore_from_pairs" start time: Nov 09 20:35 PST
+6/6 Testing: test_frogs_croak
+6/6 Test: test_frogs_croak
+Command: "/home/sanjar/UW/LeetCode/build/strings/03_frogs_croak/test_frogs_croak"
+Directory: /home/sanjar/UW/LeetCode/build/strings/03_frogs_croak
+"test_frogs_croak" start time: Nov 09 23:54 PST
 Output:
 ----------------------------------------------------------
-[==========] Running 3 tests from 1 test suite.
+[==========] Running 4 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 3 tests from TestRestorFromAdjacentPairs
-[ RUN      ] TestRestorFromAdjacentPairs.test1_IncrementalArray
-/home/sanjar/UW/LeetCode/arrays/03_restore_from_pairs/test_restore_from_pairs.cpp:73: Failure
-Expected equality of these values:
-  expected
-    Which is: { 1, 2, 3, 4 }
-  result
-    Which is: { 4, 3, 2, 1 }
-[  FAILED  ] TestRestorFromAdjacentPairs.test1_IncrementalArray (0 ms)
-[ RUN      ] TestRestorFromAdjacentPairs.test2_MixedArray
-/home/sanjar/UW/LeetCode/arrays/03_restore_from_pairs/test_restore_from_pairs.cpp:81: Failure
-Expected equality of these values:
-  expected
-    Which is: { -2, 4, 1, -3 }
-  result
-    Which is: { -3, 1, 4, -2 }
-[  FAILED  ] TestRestorFromAdjacentPairs.test2_MixedArray (0 ms)
-[ RUN      ] TestRestorFromAdjacentPairs.test3_SimpleArray
-/home/sanjar/UW/LeetCode/arrays/03_restore_from_pairs/test_restore_from_pairs.cpp:89: Failure
-Expected equality of these values:
-  expected
-    Which is: { 100000, -100000 }
-  result
-    Which is: { -100000, 100000 }
-[  FAILED  ] TestRestorFromAdjacentPairs.test3_SimpleArray (0 ms)
-[----------] 3 tests from TestRestorFromAdjacentPairs (0 ms total)
+[----------] 4 tests from TestMinNumberOfFrogs
+[ RUN      ] TestMinNumberOfFrogs.test1_OneFrog
+[       OK ] TestMinNumberOfFrogs.test1_OneFrog (0 ms)
+[ RUN      ] TestMinNumberOfFrogs.test2_TwoFrogs
+[       OK ] TestMinNumberOfFrogs.test2_TwoFrogs (0 ms)
+[ RUN      ] TestMinNumberOfFrogs.test3_ForeignFrog
+[       OK ] TestMinNumberOfFrogs.test3_ForeignFrog (0 ms)
+[ RUN      ] TestMinNumberOfFrogs.test4_SquashedFrog
+[       OK ] TestMinNumberOfFrogs.test4_SquashedFrog (0 ms)
+[----------] 4 tests from TestMinNumberOfFrogs (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 0 tests.
-[  FAILED  ] 3 tests, listed below:
-[  FAILED  ] TestRestorFromAdjacentPairs.test1_IncrementalArray
-[  FAILED  ] TestRestorFromAdjacentPairs.test2_MixedArray
-[  FAILED  ] TestRestorFromAdjacentPairs.test3_SimpleArray
-
- 3 FAILED TESTS
+[==========] 4 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 4 tests.
 
 Test Time Results:
 
-test1_IncrementalArray                                      time: 6.47e-05 s
-test2_MixedArray                                            time: 2.77e-05 s
-test3_SimpleArray                                           time: 2.11e-05 s
+test1_OneFrog                                               time: 2.57e-05 s
+test2_TwoFrogs                                              time: 4.02e-06 s
+test3_ForeignFrog                                           time: 3.70e-06 s
+test4_SquashedFrog                                          time: 3.49e-06 s
 
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
-Test Failed.
-"test_restore_from_pairs" end time: Nov 09 20:35 PST
-"test_restore_from_pairs" time elapsed: 00:00:00
+Test Passed.
+"test_frogs_croak" end time: Nov 09 23:54 PST
+"test_frogs_croak" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Nov 09 20:35 PST
+End testing: Nov 09 23:54 PST
