@@ -1,42 +1,39 @@
-Start testing: Nov 09 23:54 PST
+Start testing: Nov 10 00:57 PST
 ----------------------------------------------------------
-6/6 Testing: test_frogs_croak
-6/6 Test: test_frogs_croak
-Command: "/home/sanjar/UW/LeetCode/build/strings/03_frogs_croak/test_frogs_croak"
-Directory: /home/sanjar/UW/LeetCode/build/strings/03_frogs_croak
-"test_frogs_croak" start time: Nov 09 23:54 PST
+4/7 Testing: test_best_time2buy_sell_stock
+4/7 Test: test_best_time2buy_sell_stock
+Command: "/home/sanjar/UW/LeetCode/build/arrays/04_best_time2buy_sell_stock/test_best_time2buy_sell_stock"
+Directory: /home/sanjar/UW/LeetCode/build/arrays/04_best_time2buy_sell_stock
+"test_best_time2buy_sell_stock" start time: Nov 10 00:57 PST
 Output:
 ----------------------------------------------------------
-[==========] Running 4 tests from 1 test suite.
+[==========] Running 3 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 4 tests from TestMinNumberOfFrogs
-[ RUN      ] TestMinNumberOfFrogs.test1_OneFrog
-[       OK ] TestMinNumberOfFrogs.test1_OneFrog (0 ms)
-[ RUN      ] TestMinNumberOfFrogs.test2_TwoFrogs
-[       OK ] TestMinNumberOfFrogs.test2_TwoFrogs (0 ms)
-[ RUN      ] TestMinNumberOfFrogs.test3_ForeignFrog
-[       OK ] TestMinNumberOfFrogs.test3_ForeignFrog (0 ms)
-[ RUN      ] TestMinNumberOfFrogs.test4_SquashedFrog
-[       OK ] TestMinNumberOfFrogs.test4_SquashedFrog (0 ms)
-[----------] 4 tests from TestMinNumberOfFrogs (0 ms total)
+[----------] 3 tests from TestBestTimeToBuySellStock
+[ RUN      ] TestBestTimeToBuySellStock.test1_OneProfit
+[       OK ] TestBestTimeToBuySellStock.test1_OneProfit (0 ms)
+[ RUN      ] TestBestTimeToBuySellStock.test2_NoProfit
+[       OK ] TestBestTimeToBuySellStock.test2_NoProfit (0 ms)
+[ RUN      ] TestBestTimeToBuySellStock.test3_TwoProfits
+[       OK ] TestBestTimeToBuySellStock.test3_TwoProfits (0 ms)
+[----------] 3 tests from TestBestTimeToBuySellStock (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 4 tests.
+[==========] 3 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
 
 Test Time Results:
 
-test1_OneFrog                                               time: 2.57e-05 s
-test2_TwoFrogs                                              time: 4.02e-06 s
-test3_ForeignFrog                                           time: 3.70e-06 s
-test4_SquashedFrog                                          time: 3.49e-06 s
+test1_OneProfit                                             time: 1.99e-05 s
+test2_NoProfit                                              time: 1.90e-06 s
+test3_TwoProfits                                            time: 2.02e-06 s
 
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_frogs_croak" end time: Nov 09 23:54 PST
-"test_frogs_croak" time elapsed: 00:00:00
+"test_best_time2buy_sell_stock" end time: Nov 10 00:57 PST
+"test_best_time2buy_sell_stock" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Nov 09 23:54 PST
+End testing: Nov 10 00:57 PST
