@@ -1,7 +1,7 @@
 #include <iostream>
-#include <vector>
 #include <cmath>
 #include <stdexcept>
+#include <vector>
 
 using namespace std;
 

@@ -51,21 +51,21 @@ class TestBestTimeToBuySellStock(TestCase):
         expected = 5
         result = self.solution.max_profit(prices)
 
-        self.assertListEqual(result, expected)
+        self.assertEqual(result, expected)
 
     def test2_NoProfit(self):
         prices = [7, 6, 4, 3, 1]
         expected = 0
         result = self.solution.max_profit(prices)
 
-        self.assertListEqual(result, expected)
+        self.assertEqual(result, expected)
 
     def test3_TwoProfits(self):
         prices = [7, 9, 12, 1, 3, 6, 8]
         expected = 7
         result = self.solution.max_profit(prices)
 
-        self.assertListEqual(result, expected)
+        self.assertEqual(result, expected)
 
     def tearDown(self):
         del self.solution  # Ensure the reference is deleted.

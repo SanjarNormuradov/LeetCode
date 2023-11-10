@@ -1,39 +1,42 @@
-Start testing: Nov 10 00:57 PST
+Start testing: Nov 10 04:56 PST
 ----------------------------------------------------------
-4/7 Testing: test_best_time2buy_sell_stock
-4/7 Test: test_best_time2buy_sell_stock
-Command: "/home/sanjar/UW/LeetCode/build/arrays/04_best_time2buy_sell_stock/test_best_time2buy_sell_stock"
-Directory: /home/sanjar/UW/LeetCode/build/arrays/04_best_time2buy_sell_stock
-"test_best_time2buy_sell_stock" start time: Nov 10 00:57 PST
+5/8 Testing: test_depth_first_search
+5/8 Test: test_depth_first_search
+Command: "/home/sanjar/UW/LeetCode/build/arrays/05_depth_first_search/test_depth_first_search"
+Directory: /home/sanjar/UW/LeetCode/build/arrays/05_depth_first_search
+"test_depth_first_search" start time: Nov 10 04:56 PST
 Output:
 ----------------------------------------------------------
-[==========] Running 3 tests from 1 test suite.
+[==========] Running 4 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 3 tests from TestBestTimeToBuySellStock
-[ RUN      ] TestBestTimeToBuySellStock.test1_OneProfit
-[       OK ] TestBestTimeToBuySellStock.test1_OneProfit (0 ms)
-[ RUN      ] TestBestTimeToBuySellStock.test2_NoProfit
-[       OK ] TestBestTimeToBuySellStock.test2_NoProfit (0 ms)
-[ RUN      ] TestBestTimeToBuySellStock.test3_TwoProfits
-[       OK ] TestBestTimeToBuySellStock.test3_TwoProfits (0 ms)
-[----------] 3 tests from TestBestTimeToBuySellStock (0 ms total)
+[----------] 4 tests from TestDepthFirstSearch
+[ RUN      ] TestDepthFirstSearch.test1_Path1
+[       OK ] TestDepthFirstSearch.test1_Path1 (0 ms)
+[ RUN      ] TestDepthFirstSearch.test2_Path2
+[       OK ] TestDepthFirstSearch.test2_Path2 (0 ms)
+[ RUN      ] TestDepthFirstSearch.test3_Path3
+[       OK ] TestDepthFirstSearch.test3_Path3 (0 ms)
+[ RUN      ] TestDepthFirstSearch.test4_Path4
+[       OK ] TestDepthFirstSearch.test4_Path4 (0 ms)
+[----------] 4 tests from TestDepthFirstSearch (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 3 tests.
+[==========] 4 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 4 tests.
 
 Test Time Results:
 
-test1_OneProfit                                             time: 1.99e-05 s
-test2_NoProfit                                              time: 1.90e-06 s
-test3_TwoProfits                                            time: 2.02e-06 s
+test1_Path1                                                 time: 3.24e-05 s
+test2_Path2                                                 time: 9.74e-06 s
+test3_Path3                                                 time: 3.67e-06 s
+test4_Path4                                                 time: 3.98e-06 s
 
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_best_time2buy_sell_stock" end time: Nov 10 00:57 PST
-"test_best_time2buy_sell_stock" time elapsed: 00:00:00
+"test_depth_first_search" end time: Nov 10 04:56 PST
+"test_depth_first_search" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Nov 10 00:57 PST
+End testing: Nov 10 04:56 PST
