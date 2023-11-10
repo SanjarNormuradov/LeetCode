@@ -1,39 +1,63 @@
-Start testing: Nov 07 21:07 PST
+Start testing: Nov 09 20:35 PST
 ----------------------------------------------------------
-2/4 Testing: test_max_monster_eliminated
-2/4 Test: test_max_monster_eliminated
-Command: "/home/sanjar/UW/LeetCode/build/arrays/02_max_monster_eliminated/test_max_monster_eliminated"
-Directory: /home/sanjar/UW/LeetCode/build/arrays/02_max_monster_eliminated
-"test_max_monster_eliminated" start time: Nov 07 21:07 PST
+3/5 Testing: test_restore_from_pairs
+3/5 Test: test_restore_from_pairs
+Command: "/home/sanjar/UW/LeetCode/build/arrays/03_restore_from_pairs/test_restore_from_pairs"
+Directory: /home/sanjar/UW/LeetCode/build/arrays/03_restore_from_pairs
+"test_restore_from_pairs" start time: Nov 09 20:35 PST
 Output:
 ----------------------------------------------------------
 [==========] Running 3 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 3 tests from TestMaxMonsterEliminated
-[ RUN      ] TestMaxMonsterEliminated.test1_LowSpeed_LongDistance
-[       OK ] TestMaxMonsterEliminated.test1_LowSpeed_LongDistance (0 ms)
-[ RUN      ] TestMaxMonsterEliminated.test2_LowSpeed_ShortDistance
-[       OK ] TestMaxMonsterEliminated.test2_LowSpeed_ShortDistance (0 ms)
-[ RUN      ] TestMaxMonsterEliminated.test3_HighSpeed_ShortDistance
-[       OK ] TestMaxMonsterEliminated.test3_HighSpeed_ShortDistance (0 ms)
-[----------] 3 tests from TestMaxMonsterEliminated (0 ms total)
+[----------] 3 tests from TestRestorFromAdjacentPairs
+[ RUN      ] TestRestorFromAdjacentPairs.test1_IncrementalArray
+/home/sanjar/UW/LeetCode/arrays/03_restore_from_pairs/test_restore_from_pairs.cpp:73: Failure
+Expected equality of these values:
+  expected
+    Which is: { 1, 2, 3, 4 }
+  result
+    Which is: { 4, 3, 2, 1 }
+[  FAILED  ] TestRestorFromAdjacentPairs.test1_IncrementalArray (0 ms)
+[ RUN      ] TestRestorFromAdjacentPairs.test2_MixedArray
+/home/sanjar/UW/LeetCode/arrays/03_restore_from_pairs/test_restore_from_pairs.cpp:81: Failure
+Expected equality of these values:
+  expected
+    Which is: { -2, 4, 1, -3 }
+  result
+    Which is: { -3, 1, 4, -2 }
+[  FAILED  ] TestRestorFromAdjacentPairs.test2_MixedArray (0 ms)
+[ RUN      ] TestRestorFromAdjacentPairs.test3_SimpleArray
+/home/sanjar/UW/LeetCode/arrays/03_restore_from_pairs/test_restore_from_pairs.cpp:89: Failure
+Expected equality of these values:
+  expected
+    Which is: { 100000, -100000 }
+  result
+    Which is: { -100000, 100000 }
+[  FAILED  ] TestRestorFromAdjacentPairs.test3_SimpleArray (0 ms)
+[----------] 3 tests from TestRestorFromAdjacentPairs (0 ms total)
 
 [----------] Global test environment tear-down
 [==========] 3 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 3 tests.
+[  PASSED  ] 0 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] TestRestorFromAdjacentPairs.test1_IncrementalArray
+[  FAILED  ] TestRestorFromAdjacentPairs.test2_MixedArray
+[  FAILED  ] TestRestorFromAdjacentPairs.test3_SimpleArray
+
+ 3 FAILED TESTS
 
 Test Time Results:
 
-test1_LowSpeed_LongDistance                                 time: 2.29e-05 s
-test2_LowSpeed_ShortDistance                                time: 2.94e-06 s
-test3_HighSpeed_ShortDistance                               time: 2.65e-06 s
+test1_IncrementalArray                                      time: 6.47e-05 s
+test2_MixedArray                                            time: 2.77e-05 s
+test3_SimpleArray                                           time: 2.11e-05 s
 
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
-Test Passed.
-"test_max_monster_eliminated" end time: Nov 07 21:07 PST
-"test_max_monster_eliminated" time elapsed: 00:00:00
+Test Failed.
+"test_restore_from_pairs" end time: Nov 09 20:35 PST
+"test_restore_from_pairs" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Nov 07 21:07 PST
+End testing: Nov 09 20:35 PST

@@ -1,6 +1,7 @@
 import subprocess
 import os
 import re
+from typing import List, Any
 
 
 # Define the paths to your build directory and test directory
@@ -12,8 +13,19 @@ cpp_test_pattern = re.compile(r"(test\d+_.+?)\s+time: ([\d.e-]+) s")
 python_test_pattern = re.compile(r"(test\d+_.+?)\s+time: ([\d.e-]+) s")
 
 
+def add_subdirectory() -> None:
+    CMakeLists_subdir_pattern = re.compile(r"add_subdirectory\(([^)]+)\)")
+    cwd_name = os.getcwd().split('/')[-1]
+    with open("../CMakeLists.txt", 'r+') as CMakeLists_file:
+        file_content = CMakeLists_file.read()
+        subdirs_list = CMakeLists_subdir_pattern.findall(file_content)
+        if cwd_name not in subdirs_list:
+            CMakeLists_file.seek(0, 2)
+            CMakeLists_file.write(f"add_subdirectory({cwd_name})\n")
+
+
 # Function to run tests and capture the output
-def run_tests(command, pattern, working_directory, language):
+def run_tests(command: List[str], pattern: re.Pattern, working_directory: str, language: str) -> List[Any]:
     original_directory = os.getcwd()
     os.chdir(working_directory)
 
@@ -41,7 +53,7 @@ def run_tests(command, pattern, working_directory, language):
 
 
 # Function to create the markdown table from the test results
-def create_markdown_table(test_results, language):
+def create_markdown_table(test_results: List[Any], language: str) -> str:
     table = f"## {language} Test Times\n\n"
     table += "| Test Name | Time Spent |\n"
     table += "| --- | --- |\n"
@@ -50,6 +62,9 @@ def create_markdown_table(test_results, language):
 
     return table
 
+
+# Append current folder to the end of CMakeLists.txt file with add_subdirectory()
+add_subdirectory()
 
 test_name = [filename.split('.')[0] for filename in os.listdir() if filename.startswith('test_') and filename.endswith('.py')][0]
 # Run C++ and Python tests
