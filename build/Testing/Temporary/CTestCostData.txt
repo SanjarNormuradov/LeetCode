@@ -12,5 +12,6 @@ test_frogs_croak 12 0.000203491
 test_best_time2buy_sell_stock 2 0.00129275
 test_longest_incr_path 3 0.000678861
 test_depth_first_search 1 0.00250763
-test_count_increasing_path 2 0.00123977
+test_count_increasing_path 2 0
 ---
+test_count_increasing_path

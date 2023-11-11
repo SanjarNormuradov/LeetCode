@@ -12,48 +12,40 @@ public:
         if (!checkConstraints(grid)) {
             throw std::runtime_error("Constraints violated");
         }
-        m = grid.size();
-        n = grid[0].size();
+        int m = grid.size();
+        int n = grid[0].size();
 
-        memo.resize(m);
-        for (auto& row : memo) {
-            row.assign(n, -1);
-        }
+        vector<vector<int>> memo(m, vector<int> (n, -1));
         int max_cnt = 0;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                max_cnt = depthFirstSearch(i, j, grid) + max_cnt;
-                max_cnt = max_cnt % MOD;
+                if (memo[i][j] == -1) {
+                    max_cnt = (depthFirstSearch(grid, i, j, memo, -1) + max_cnt) % 1000000007;
+                } else {
+                    max_cnt = (memo[i][j] + max_cnt) % 1000000007;
+                } 
             }
         }
         return max_cnt;
     }
 
 private:
-    vector<vector<int>> memo;
-    int m, n;
-    long long MOD = pow(10, 9) + 7;
-
-    int depthFirstSearch(int i, int j, const vector<vector<int>>& grid) {
+    int depthFirstSearch(const vector<vector<int>>& grid, int i, int j, vector<vector<int>>& memo, int prev) {
+        if (i < 0 || i > grid.size() || j < 0 || grid[0].size() || prev > grid[i][j]) return 0;
         if (memo[i][j] != -1) return memo[i][j];
 
-        int num_paths = 1; // Start with a path in the current cell
-        vector<pair<int, int>> steps = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
-        for (const auto& step : steps) {
-            int x = i + step.first;
-            int y = j + step.second;
-            if ((x >= 0 && x < m) && (y >= 0 && y < n) && (grid[x][y] > grid[i][j])) {
-                num_paths = depthFirstSearch(x, y, grid) + num_paths;
-                num_paths = num_paths % MOD;
-            }
-        }
-        memo[i][j] = num_paths;
+        int top    = depthFirstSearch(grid, i-1, j, memo, grid[i][j]);
+        int bottom = depthFirstSearch(grid, i+1, j, memo, grid[i][j]);
+        int right  = depthFirstSearch(grid, i, j+1, memo, grid[i][j]);
+        int left   = depthFirstSearch(grid, i, j-1, memo, grid[i][j]);
+
+        memo[i][j] = (1 + top + bottom + right + left) % 1000000007;
         return memo[i][j];
     }
 
     // Helper function to check the constraints
     bool checkConstraints(const vector<vector<int>>& grid) {
-        m = grid.size();
+        int m = grid.size();
         if (m == 0 || m > 1000) return false;
 
         for (const auto& row : grid) {

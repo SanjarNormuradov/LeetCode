@@ -1,48 +1,93 @@
-Start testing: Nov 10 17:01 PST
+Start testing: Nov 10 17:36 PST
 ----------------------------------------------------------
 6/9 Testing: test_count_increasing_path
 6/9 Test: test_count_increasing_path
 Command: "/home/sanjar/UW/LeetCode/build/arrays/06_count_increasing_path/test_count_increasing_path"
 Directory: /home/sanjar/UW/LeetCode/build/arrays/06_count_increasing_path
-"test_count_increasing_path" start time: Nov 10 17:01 PST
+"test_count_increasing_path" start time: Nov 10 17:36 PST
 Output:
 ----------------------------------------------------------
 [==========] Running 6 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 6 tests from TestCountIncreasingPath
 [ RUN      ] TestCountIncreasingPath.test1_Grid1
-[       OK ] TestCountIncreasingPath.test1_Grid1 (0 ms)
+/home/sanjar/UW/LeetCode/arrays/06_count_increasing_path/test_count_increasing_path.cpp:73: Failure
+Expected equality of these values:
+  expected
+    Which is: 23
+  result
+    Which is: 0
+[  FAILED  ] TestCountIncreasingPath.test1_Grid1 (0 ms)
 [ RUN      ] TestCountIncreasingPath.test2_Grid2
-[       OK ] TestCountIncreasingPath.test2_Grid2 (0 ms)
+/home/sanjar/UW/LeetCode/arrays/06_count_increasing_path/test_count_increasing_path.cpp:81: Failure
+Expected equality of these values:
+  expected
+    Which is: 23
+  result
+    Which is: 0
+[  FAILED  ] TestCountIncreasingPath.test2_Grid2 (0 ms)
 [ RUN      ] TestCountIncreasingPath.test3_Grid3
-[       OK ] TestCountIncreasingPath.test3_Grid3 (0 ms)
+/home/sanjar/UW/LeetCode/arrays/06_count_increasing_path/test_count_increasing_path.cpp:89: Failure
+Expected equality of these values:
+  expected
+    Which is: 1
+  result
+    Which is: 0
+[  FAILED  ] TestCountIncreasingPath.test3_Grid3 (0 ms)
 [ RUN      ] TestCountIncreasingPath.test4_Grid4
-[       OK ] TestCountIncreasingPath.test4_Grid4 (0 ms)
+/home/sanjar/UW/LeetCode/arrays/06_count_increasing_path/test_count_increasing_path.cpp:97: Failure
+Expected equality of these values:
+  expected
+    Which is: 3
+  result
+    Which is: 0
+[  FAILED  ] TestCountIncreasingPath.test4_Grid4 (0 ms)
 [ RUN      ] TestCountIncreasingPath.test5_Grid4
-[       OK ] TestCountIncreasingPath.test5_Grid4 (0 ms)
+/home/sanjar/UW/LeetCode/arrays/06_count_increasing_path/test_count_increasing_path.cpp:105: Failure
+Expected equality of these values:
+  expected
+    Which is: 3
+  result
+    Which is: 0
+[  FAILED  ] TestCountIncreasingPath.test5_Grid4 (0 ms)
 [ RUN      ] TestCountIncreasingPath.test6_Grid6
-[       OK ] TestCountIncreasingPath.test6_Grid6 (0 ms)
+/home/sanjar/UW/LeetCode/arrays/06_count_increasing_path/test_count_increasing_path.cpp:113: Failure
+Expected equality of these values:
+  expected
+    Which is: 8
+  result
+    Which is: 0
+[  FAILED  ] TestCountIncreasingPath.test6_Grid6 (0 ms)
 [----------] 6 tests from TestCountIncreasingPath (0 ms total)
 
 [----------] Global test environment tear-down
 [==========] 6 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 6 tests.
+[  PASSED  ] 0 tests.
+[  FAILED  ] 6 tests, listed below:
+[  FAILED  ] TestCountIncreasingPath.test1_Grid1
+[  FAILED  ] TestCountIncreasingPath.test2_Grid2
+[  FAILED  ] TestCountIncreasingPath.test3_Grid3
+[  FAILED  ] TestCountIncreasingPath.test4_Grid4
+[  FAILED  ] TestCountIncreasingPath.test5_Grid4
+[  FAILED  ] TestCountIncreasingPath.test6_Grid6
+
+ 6 FAILED TESTS
 
 Test Time Results:
 
-test1_Grid1                                                 time: 3.78e-05 s
-test2_Grid2                                                 time: 1.11e-05 s
-test3_Grid3                                                 time: 4.20e-06 s
-test4_Grid4                                                 time: 4.65e-06 s
-test5_Grid4                                                 time: 5.76e-06 s
-test6_Grid6                                                 time: 6.84e-06 s
+test1_Grid1                                                 time: 4.94e-05 s
+test2_Grid2                                                 time: 1.87e-05 s
+test3_Grid3                                                 time: 1.52e-05 s
+test4_Grid4                                                 time: 1.49e-05 s
+test5_Grid4                                                 time: 1.57e-05 s
+test6_Grid6                                                 time: 2.09e-05 s
 
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
-Test Passed.
-"test_count_increasing_path" end time: Nov 10 17:01 PST
+Test Failed.
+"test_count_increasing_path" end time: Nov 10 17:36 PST
 "test_count_increasing_path" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Nov 10 17:01 PST
+End testing: Nov 10 17:36 PST

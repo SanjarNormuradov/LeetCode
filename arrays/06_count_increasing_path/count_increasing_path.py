@@ -3,34 +3,35 @@ import numpy as np
 
 class Solution:
     def count_paths(self, grid: np.ndarray) -> int:
-        self.MOD = 10**9 + 7
         if not self._check_constraints(grid):
             raise ValueError('Constraints violated')
 
         self.memo = -1 * np.ones_like(grid, dtype=np.uint16)
         self.grid = grid
-        self.m, self.n = grid.shape
+        m, n = grid.shape
         max_cnt = 0
         # Update path grid with all possible paths
-        for i in range(self.m):
-            for j in range(self.n):
-                max_cnt += self._depth_first_search(i, j)
-                max_cnt %= self.MOD
+        for i in range(m):
+            for j in range(n):
+                if self.memo[i][j] == -1:
+                    max_cnt = (max_cnt + self._depth_first_search(i, j, -1)) % 1000000007
+                else:
+                    max_cnt = (max_cnt + self.memo[i][j]) % 1000000007
 
         return max_cnt
 
-    def _depth_first_search(self, i: int, j: int) -> int:
+    def _depth_first_search(self, i: int, j: int, prev: int) -> int:
+        if (i < 0 or i >= self.grid.shape[0]) or (j < 0 or j >= self.grid.shape[1]) or prev > self.grid[i, j]:
+            return 0
         if self.memo[i, j] != -1:
             return self.memo[i, j]
 
-        num_paths = 1  # Start with a path in the current cell
-        steps = [(0, 1), (0, -1), (1, 0), (-1, 0)]
-        for dx, dy in steps:
-            x, y = i + dx, j + dy
-            if (0 <= x < self.m) and (0 <= y < self.n) and (self.grid[x, y] > self.grid[i, j]):
-                num_paths += self._depth_first_search(x, y)
+        top = self._depth_first_search(i - 1, j, self.grid[i][j])
+        bottom = self._depth_first_search(i + 1, j, self.grid[i][j])
+        right = self._depth_first_search(i, j + 1, self.grid[i][j])
+        left = self._depth_first_search(i, j - 1, self.grid[i][j])
+        self.memo[i, j] = (1 + top + bottom + right + left) % 1000000007
 
-        self.memo[i, j] = num_paths % self.MOD
         return self.memo[i, j]
 
     def _check_constraints(self, grid: np.ndarray) -> bool:
