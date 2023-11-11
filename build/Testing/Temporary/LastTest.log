@@ -1,42 +1,48 @@
-Start testing: Nov 10 04:56 PST
+Start testing: Nov 10 17:01 PST
 ----------------------------------------------------------
-5/8 Testing: test_depth_first_search
-5/8 Test: test_depth_first_search
-Command: "/home/sanjar/UW/LeetCode/build/arrays/05_depth_first_search/test_depth_first_search"
-Directory: /home/sanjar/UW/LeetCode/build/arrays/05_depth_first_search
-"test_depth_first_search" start time: Nov 10 04:56 PST
+6/9 Testing: test_count_increasing_path
+6/9 Test: test_count_increasing_path
+Command: "/home/sanjar/UW/LeetCode/build/arrays/06_count_increasing_path/test_count_increasing_path"
+Directory: /home/sanjar/UW/LeetCode/build/arrays/06_count_increasing_path
+"test_count_increasing_path" start time: Nov 10 17:01 PST
 Output:
 ----------------------------------------------------------
-[==========] Running 4 tests from 1 test suite.
+[==========] Running 6 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 4 tests from TestDepthFirstSearch
-[ RUN      ] TestDepthFirstSearch.test1_Path1
-[       OK ] TestDepthFirstSearch.test1_Path1 (0 ms)
-[ RUN      ] TestDepthFirstSearch.test2_Path2
-[       OK ] TestDepthFirstSearch.test2_Path2 (0 ms)
-[ RUN      ] TestDepthFirstSearch.test3_Path3
-[       OK ] TestDepthFirstSearch.test3_Path3 (0 ms)
-[ RUN      ] TestDepthFirstSearch.test4_Path4
-[       OK ] TestDepthFirstSearch.test4_Path4 (0 ms)
-[----------] 4 tests from TestDepthFirstSearch (0 ms total)
+[----------] 6 tests from TestCountIncreasingPath
+[ RUN      ] TestCountIncreasingPath.test1_Grid1
+[       OK ] TestCountIncreasingPath.test1_Grid1 (0 ms)
+[ RUN      ] TestCountIncreasingPath.test2_Grid2
+[       OK ] TestCountIncreasingPath.test2_Grid2 (0 ms)
+[ RUN      ] TestCountIncreasingPath.test3_Grid3
+[       OK ] TestCountIncreasingPath.test3_Grid3 (0 ms)
+[ RUN      ] TestCountIncreasingPath.test4_Grid4
+[       OK ] TestCountIncreasingPath.test4_Grid4 (0 ms)
+[ RUN      ] TestCountIncreasingPath.test5_Grid4
+[       OK ] TestCountIncreasingPath.test5_Grid4 (0 ms)
+[ RUN      ] TestCountIncreasingPath.test6_Grid6
+[       OK ] TestCountIncreasingPath.test6_Grid6 (0 ms)
+[----------] 6 tests from TestCountIncreasingPath (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 4 tests.
+[==========] 6 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 6 tests.
 
 Test Time Results:
 
-test1_Path1                                                 time: 3.24e-05 s
-test2_Path2                                                 time: 9.74e-06 s
-test3_Path3                                                 time: 3.67e-06 s
-test4_Path4                                                 time: 3.98e-06 s
+test1_Grid1                                                 time: 3.78e-05 s
+test2_Grid2                                                 time: 1.11e-05 s
+test3_Grid3                                                 time: 4.20e-06 s
+test4_Grid4                                                 time: 4.65e-06 s
+test5_Grid4                                                 time: 5.76e-06 s
+test6_Grid6                                                 time: 6.84e-06 s
 
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_depth_first_search" end time: Nov 10 04:56 PST
-"test_depth_first_search" time elapsed: 00:00:00
+"test_count_increasing_path" end time: Nov 10 17:01 PST
+"test_count_increasing_path" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Nov 10 04:56 PST
+End testing: Nov 10 17:01 PST
