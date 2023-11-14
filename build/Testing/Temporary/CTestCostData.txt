@@ -13,5 +13,5 @@ test_best_time2buy_sell_stock 2 0.00129275
 test_longest_incr_path 3 0.000678861
 test_depth_first_search 1 0.00250763
 test_count_increasing_path 2 0
+test_sort_vowels 2 0.00100494
 ---
-test_count_increasing_path

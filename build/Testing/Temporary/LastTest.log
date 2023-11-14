@@ -1,93 +1,36 @@
-Start testing: Nov 10 17:36 PST
+Start testing: Nov 14 13:16 PST
 ----------------------------------------------------------
-6/9 Testing: test_count_increasing_path
-6/9 Test: test_count_increasing_path
-Command: "/home/sanjar/UW/LeetCode/build/arrays/06_count_increasing_path/test_count_increasing_path"
-Directory: /home/sanjar/UW/LeetCode/build/arrays/06_count_increasing_path
-"test_count_increasing_path" start time: Nov 10 17:36 PST
+10/10 Testing: test_sort_vowels
+10/10 Test: test_sort_vowels
+Command: "/home/sanjar/UW/LeetCode/build/strings/04_sort_vowels/test_sort_vowels"
+Directory: /home/sanjar/UW/LeetCode/build/strings/04_sort_vowels
+"test_sort_vowels" start time: Nov 14 13:16 PST
 Output:
 ----------------------------------------------------------
-[==========] Running 6 tests from 1 test suite.
+[==========] Running 2 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 6 tests from TestCountIncreasingPath
-[ RUN      ] TestCountIncreasingPath.test1_Grid1
-/home/sanjar/UW/LeetCode/arrays/06_count_increasing_path/test_count_increasing_path.cpp:73: Failure
-Expected equality of these values:
-  expected
-    Which is: 23
-  result
-    Which is: 0
-[  FAILED  ] TestCountIncreasingPath.test1_Grid1 (0 ms)
-[ RUN      ] TestCountIncreasingPath.test2_Grid2
-/home/sanjar/UW/LeetCode/arrays/06_count_increasing_path/test_count_increasing_path.cpp:81: Failure
-Expected equality of these values:
-  expected
-    Which is: 23
-  result
-    Which is: 0
-[  FAILED  ] TestCountIncreasingPath.test2_Grid2 (0 ms)
-[ RUN      ] TestCountIncreasingPath.test3_Grid3
-/home/sanjar/UW/LeetCode/arrays/06_count_increasing_path/test_count_increasing_path.cpp:89: Failure
-Expected equality of these values:
-  expected
-    Which is: 1
-  result
-    Which is: 0
-[  FAILED  ] TestCountIncreasingPath.test3_Grid3 (0 ms)
-[ RUN      ] TestCountIncreasingPath.test4_Grid4
-/home/sanjar/UW/LeetCode/arrays/06_count_increasing_path/test_count_increasing_path.cpp:97: Failure
-Expected equality of these values:
-  expected
-    Which is: 3
-  result
-    Which is: 0
-[  FAILED  ] TestCountIncreasingPath.test4_Grid4 (0 ms)
-[ RUN      ] TestCountIncreasingPath.test5_Grid4
-/home/sanjar/UW/LeetCode/arrays/06_count_increasing_path/test_count_increasing_path.cpp:105: Failure
-Expected equality of these values:
-  expected
-    Which is: 3
-  result
-    Which is: 0
-[  FAILED  ] TestCountIncreasingPath.test5_Grid4 (0 ms)
-[ RUN      ] TestCountIncreasingPath.test6_Grid6
-/home/sanjar/UW/LeetCode/arrays/06_count_increasing_path/test_count_increasing_path.cpp:113: Failure
-Expected equality of these values:
-  expected
-    Which is: 8
-  result
-    Which is: 0
-[  FAILED  ] TestCountIncreasingPath.test6_Grid6 (0 ms)
-[----------] 6 tests from TestCountIncreasingPath (0 ms total)
+[----------] 2 tests from TestSortVowels
+[ RUN      ] TestSortVowels.test1_lEetcOde
+[       OK ] TestSortVowels.test1_lEetcOde (0 ms)
+[ RUN      ] TestSortVowels.test2_lYmpH
+[       OK ] TestSortVowels.test2_lYmpH (0 ms)
+[----------] 2 tests from TestSortVowels (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 6 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 0 tests.
-[  FAILED  ] 6 tests, listed below:
-[  FAILED  ] TestCountIncreasingPath.test1_Grid1
-[  FAILED  ] TestCountIncreasingPath.test2_Grid2
-[  FAILED  ] TestCountIncreasingPath.test3_Grid3
-[  FAILED  ] TestCountIncreasingPath.test4_Grid4
-[  FAILED  ] TestCountIncreasingPath.test5_Grid4
-[  FAILED  ] TestCountIncreasingPath.test6_Grid6
-
- 6 FAILED TESTS
+[==========] 2 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
 
 Test Time Results:
 
-test1_Grid1                                                 time: 4.94e-05 s
-test2_Grid2                                                 time: 1.87e-05 s
-test3_Grid3                                                 time: 1.52e-05 s
-test4_Grid4                                                 time: 1.49e-05 s
-test5_Grid4                                                 time: 1.57e-05 s
-test6_Grid6                                                 time: 2.09e-05 s
+test1_lEetcOde                                              time: 2.52e-05 s
+test2_lYmpH                                                 time: 2.06e-06 s
 
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
-Test Failed.
-"test_count_increasing_path" end time: Nov 10 17:36 PST
-"test_count_increasing_path" time elapsed: 00:00:00
+Test Passed.
+"test_sort_vowels" end time: Nov 14 13:16 PST
+"test_sort_vowels" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Nov 10 17:36 PST
+End testing: Nov 14 13:16 PST
