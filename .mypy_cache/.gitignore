@@ -1,0 +1,8 @@
+# Ignore all JSON files:
+*.json
+
+# But keep tracking certain JSON files that are needed:
+# !important-config.json
+
+# Ignore cmake files
+*.cmake
