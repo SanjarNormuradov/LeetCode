@@ -1,4 +1,6 @@
-## Problem Statement
+# Problem
+
+## Statement
 Given an m x n integers matrix, return the length of the longest increasing path in matrix.
 
 From each cell, you can either move in four directions: left, right, up, or down. \
@@ -25,6 +27,7 @@ Output: 1\
 `1 <= m, n <= 200`\
 `0 <= matrix[i][j] <= 231 - 1`\
 
+# Solution
 
 ## Approach
 It can be solved by using Simple Depth-First-Search(DFS) Algorithm. \
@@ -34,7 +37,6 @@ Choose every element of the matrix as a starting point and apply the DFS algorit
 n - #rows, m - #columns
 - Time: O(n * m). Each cell's DFS is computed only once due to memoization
 - Memory: O(m * n), for the memoization table
-
 
 ## Test Results
 
