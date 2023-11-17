@@ -15,3 +15,5 @@ CACHE*
 
 # Ignore .pyc files
 *.pyc
+
+Testing/
