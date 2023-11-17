@@ -1,4 +1,4 @@
-#include "count_increasing_path.cpp"
+#include "unique_paths_with_obstacles.cpp"
 #include <gtest/gtest.h>
 #include <vector>
 #include <chrono>
@@ -47,7 +47,7 @@ public:
 };
 
 
-class TestCountIncreasingPath : public ::testing::Test {
+class TestUniquePathsWithObstacles : public ::testing::Test {
 protected:
     Solution* solution; // Each test will have its own pointer to Solution instance
 
@@ -65,53 +65,22 @@ protected:
 };
 
 
-TEST_F(TestCountIncreasingPath, test1_Grid1) { 
-    vector<vector<int>> grid = {{9, 9, 4}, {6, 6, 8}, {2, 1, 1}};
-    int expected = 23;
-    int result = solution->countPaths(grid);
+TEST_F(TestUniquePathsWithObstacles, test1_obstacleGrid1) { 
+    vector<vector<int>> obstacleGrid = {{0, 0, 0}, {0, 1, 0}, {0, 0, 0}};
+    int expected = 2;
+    int result = solution->uniquePathsWithObstacles(obstacleGrid);
 
     ASSERT_EQ(expected, result);
 }
 
-TEST_F(TestCountIncreasingPath, test2_Grid2) { 
-    vector<vector<int>> grid = {{3, 4, 5}, {3, 2, 6}, {2, 2, 1}};
-    int expected = 23;
-    int result = solution->countPaths(grid);
-
-    ASSERT_EQ(expected, result);
-}
-
-TEST_F(TestCountIncreasingPath, test3_Grid3) { 
-    vector<vector<int>> grid = {{1}};
+TEST_F(TestUniquePathsWithObstacles, test2_obstacleGrid2) { 
+    vector<vector<int>> obstacleGrid = {{0, 1}, {0, 0}};
     int expected = 1;
-    int result = solution->countPaths(grid);
+    int result = solution->uniquePathsWithObstacles(obstacleGrid);
 
     ASSERT_EQ(expected, result);
 }
 
-TEST_F(TestCountIncreasingPath, test4_Grid4) { 
-    vector<vector<int>> grid = {{1, 2}};
-    int expected = 3;
-    int result = solution->countPaths(grid);
-
-    ASSERT_EQ(expected, result);
-}
-
-TEST_F(TestCountIncreasingPath, test5_Grid4) { 
-    vector<vector<int>> grid = {{1}, {2}};
-    int expected = 3;
-    int result = solution->countPaths(grid);
-
-    ASSERT_EQ(expected, result);
-}
-
-TEST_F(TestCountIncreasingPath, test6_Grid6) { 
-    vector<vector<int>> grid = {{1, 1}, {3, 4}};
-    int expected = 8;
-    int result = solution->countPaths(grid);
-
-    ASSERT_EQ(expected, result);
-}
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);

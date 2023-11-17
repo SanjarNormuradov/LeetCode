@@ -1,5 +1,6 @@
 # Ignore all JSON files:
 *.json
+.vscode/
 
 # But keep tracking certain JSON files that are needed:
 # !important-config.json
@@ -15,5 +16,8 @@ CACHE*
 
 # Ignore .pyc files
 *.pyc
+
+# Ignore testing log files
 Testing/
 build/Testing/Temporary/
+

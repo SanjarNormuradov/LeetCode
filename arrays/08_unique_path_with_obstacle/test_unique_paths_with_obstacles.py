@@ -1,5 +1,5 @@
 from unittest import TestCase, TestResult, TestLoader
-from count_increasing_path import Solution
+from unique_paths_with_obstacles import Solution
 from time import time
 import numpy as np
 
@@ -41,50 +41,22 @@ def time_tests(cls):
     return cls
 
 
-class TestCountIncreasingPath(TestCase):
+class TestUniquePathsWithObstacles(TestCase):
     def setUp(self):
         # This method is called before each test
         self.solution = Solution()
 
-    def test1_Grid1(self):
-        grid = np.array([[9, 9, 4], [6, 6, 8], [2, 1, 1]])
-        expected = 23
-        result = self.solution.count_paths(grid)
+    def test1_obstacleGrid1(self):
+        obstacle_grid = np.array([[0, 0, 0], [0, 1, 0], [0, 0, 0]])
+        expected = 2
+        result = self.solution.uniquePathsWithObstacles(obstacle_grid)
 
         self.assertEqual(result, expected)
 
-    def test2_Grid2(self):
-        grid = np.array([[3, 4, 5], [3, 2, 6], [2, 2, 1]])
-        expected = 23
-        result = self.solution.count_paths(grid)
-
-        self.assertEqual(result, expected)
-
-    def test3_Grid3(self):
-        grid = np.array([[1]])
+    def test2_obstacleGrid2(self):
+        obstacle_grid = np.array([[0, 1], [0, 0]])
         expected = 1
-        result = self.solution.count_paths(grid)
-
-        self.assertEqual(result, expected)
-
-    def test4_Grid4(self):
-        grid = np.array([[1, 2]])
-        expected = 3
-        result = self.solution.count_paths(grid)
-
-        self.assertEqual(result, expected)
-
-    def test5_Grid5(self):
-        grid = np.array([[1], [2]])
-        expected = 3
-        result = self.solution.count_paths(grid)
-
-        self.assertEqual(result, expected)
-
-    def test6_Grid6(self):
-        grid = np.array([[1, 1], [3, 4]])
-        expected = 8
-        result = self.solution.count_paths(grid)
+        result = self.solution.uniquePathsWithObstacles(obstacle_grid)
 
         self.assertEqual(result, expected)
 
@@ -93,7 +65,7 @@ class TestCountIncreasingPath(TestCase):
 
 
 if __name__ == '__main__':
-    suite = TestLoader().loadTestsFromTestCase(TestCountIncreasingPath)
+    suite = TestLoader().loadTestsFromTestCase(TestUniquePathsWithObstacles)
     result = CustomTestResult()
     suite.run(result)
     result.printTestTimes()
