@@ -1,19 +1,19 @@
 ## Problem Statement
 Given an m x n integers matrix, return the length of the longest increasing path in matrix.
 
-From each cell, you can either move in four directions: left, right, up, or down.\
+From each cell, you can either move in four directions: left, right, up, or down. \
 You may not move diagonally or move outside the boundary (i.e., wrap-around is not allowed).
 
 ### Examples
 Example 1:\
 Input: matrix = [[9,9,4],[6,6,8],[2,1,1]]\
 Output: 4\
-Explanation: The longest increasing path is [1, 2, 6, 9].\
+Explanation: The longest increasing path is [1, 2, 6, 9]. \
 
 Example 2:\
 Input: matrix = [[3,4,5],[3,2,6],[2,2,1]]\
 Output: 4\
-Explanation: The longest increasing path is [3, 4, 5, 6]. Moving diagonally is not allowed.\
+Explanation: The longest increasing path is [3, 4, 5, 6]. Moving diagonally is not allowed. \
 
 Example 3:\
 Input: matrix = [[1]]\
@@ -24,6 +24,16 @@ Output: 1\
 `n == matrix[i].length`\
 `1 <= m, n <= 200`\
 `0 <= matrix[i][j] <= 231 - 1`\
+
+
+## Approach
+It can be solved by using Simple Depth-First-Search(DFS) Algorithm. \
+Choose every element of the matrix as a starting point and apply the DFS algorithm in which we check the maximum possible length of the increasing path through a particular starting point, now we take the the maximum of the all possible paths. 
+
+### Complexity
+n - #rows, m - #columns
+- Time: O(n * m). Each cell's DFS is computed only once due to memoization
+- Memory: O(m * n), for the memoization table
 
 
 ## Test Results
