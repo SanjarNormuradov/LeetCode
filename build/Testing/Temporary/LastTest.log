@@ -1,36 +1,39 @@
-Start testing: Nov 15 23:37 PST
+Start testing: Nov 16 18:05 PST
 ----------------------------------------------------------
-11/11 Testing: test_bulls_n_cows
-11/11 Test: test_bulls_n_cows
-Command: "/home/sanjar/UW/LeetCode/build/strings/05_bulls_n_cows/test_bulls_n_cows"
-Directory: /home/sanjar/UW/LeetCode/build/strings/05_bulls_n_cows
-"test_bulls_n_cows" start time: Nov 15 23:37 PST
+7/12 Testing: test_two_sum
+7/12 Test: test_two_sum
+Command: "/home/sanjar/UW/LeetCode/build/arrays/07_two_sum/test_two_sum"
+Directory: /home/sanjar/UW/LeetCode/build/arrays/07_two_sum
+"test_two_sum" start time: Nov 16 18:05 PST
 Output:
 ----------------------------------------------------------
-[==========] Running 2 tests from 1 test suite.
+[==========] Running 3 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 2 tests from TestBullsAndCows
-[ RUN      ] TestBullsAndCows.test1_1A3B
-[       OK ] TestBullsAndCows.test1_1A3B (0 ms)
-[ RUN      ] TestBullsAndCows.test2_1A1B
-[       OK ] TestBullsAndCows.test2_1A1B (0 ms)
-[----------] 2 tests from TestBullsAndCows (0 ms total)
+[----------] 3 tests from TestTwoSum
+[ RUN      ] TestTwoSum.test1_2_7_11_15
+[       OK ] TestTwoSum.test1_2_7_11_15 (0 ms)
+[ RUN      ] TestTwoSum.test2_3_2_4
+[       OK ] TestTwoSum.test2_3_2_4 (0 ms)
+[ RUN      ] TestTwoSum.test3_3_3
+[       OK ] TestTwoSum.test3_3_3 (0 ms)
+[----------] 3 tests from TestTwoSum (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 2 tests.
+[==========] 3 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
 
 Test Time Results:
 
-test1_1A3B                                                  time: 3.04e-05 s
-test2_1A1B                                                  time: 5.74e-06 s
+test1_2_7_11_15                                             time: 3.02e-05 s
+test2_3_2_4                                                 time: 6.32e-06 s
+test3_3_3                                                   time: 4.66e-06 s
 
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_bulls_n_cows" end time: Nov 15 23:37 PST
-"test_bulls_n_cows" time elapsed: 00:00:00
+"test_two_sum" end time: Nov 16 18:05 PST
+"test_two_sum" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Nov 15 23:37 PST
+End testing: Nov 16 18:05 PST

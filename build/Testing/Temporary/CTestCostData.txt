@@ -15,4 +15,5 @@ test_depth_first_search 1 0.00250763
 test_count_increasing_path 2 0
 test_sort_vowels 2 0.00100494
 test_bulls_n_cows 2 0.00101332
+test_two_sum 2 0.00121511
 ---
