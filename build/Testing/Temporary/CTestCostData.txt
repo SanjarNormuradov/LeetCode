@@ -16,4 +16,5 @@ test_count_increasing_path 2 0
 test_sort_vowels 2 0.00100494
 test_bulls_n_cows 2 0.00101332
 test_two_sum 2 0.00121511
+test_palindrome 4 0.000630505
 ---
