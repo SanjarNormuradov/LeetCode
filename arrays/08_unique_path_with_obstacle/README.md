@@ -24,6 +24,10 @@ Example 2:\
 Input: obstacleGrid = [[0,1],[0,0]]\
 Output: 1
 
+Example 3:\
+Input: obstacleGrid = [[1]]\
+Output: 0
+
 ### Constraints
 - `m == obstacleGrid.length`
 - `n == obstacleGrid[i].length`
@@ -45,12 +49,14 @@ To address this problem, a dynamic programming approach is used. A 2D array, dp,
 ### C++ Test Times
 | Test Name | Time Spent |
 | --- | --- |
-| test1_obstacleGrid1 | 1.01e-05 s |
-| test2_obstacleGrid2 | 3.15e-06 s |
+| test1_obstacleGrid1 | 1.39e-05 s |
+| test2_obstacleGrid2 | 4.70e-06 s |
+| test3_obstacleGrid3 | 3.36e-06 s |
 
 ### Python Test Times
 | Test Name | Time Spent |
 | --- | --- |
-| test1_obstacleGrid1 | 1.71e-04 s |
-| test2_obstacleGrid2 | 4.98e-05 s |
+| test1_obstacleGrid1 | 1.83e-04 s |
+| test2_obstacleGrid2 | 5.08e-05 s |
+| test3_obstacleGrid3 | 4.32e-05 s |
 

@@ -16,7 +16,7 @@ public:
         int n = obstacleGrid[0].size();
 
         vector<vector<int>> dp(m, vector<int> (n, 0));
-        dp[0][0] = 1;
+        dp[0][0] = obstacleGrid[0][0] == 0 ? 1 : 0;
         // Fill the first row
         for (int j = 1; j < n; j++) {
             if (obstacleGrid[0][j] == 0) {

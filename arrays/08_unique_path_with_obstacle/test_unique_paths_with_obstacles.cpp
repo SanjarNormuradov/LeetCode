@@ -81,6 +81,13 @@ TEST_F(TestUniquePathsWithObstacles, test2_obstacleGrid2) {
     ASSERT_EQ(expected, result);
 }
 
+TEST_F(TestUniquePathsWithObstacles, test3_obstacleGrid3) { 
+    vector<vector<int>> obstacleGrid = {{1}};
+    int expected = 0;
+    int result = solution->uniquePathsWithObstacles(obstacleGrid);
+
+    ASSERT_EQ(expected, result);
+}
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);

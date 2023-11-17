@@ -60,6 +60,13 @@ class TestUniquePathsWithObstacles(TestCase):
 
         self.assertEqual(result, expected)
 
+    def test3_obstacleGrid3(self):
+        obstacle_grid = np.array([[1]])
+        expected = 0
+        result = self.solution.uniquePathsWithObstacles(obstacle_grid)
+
+        self.assertEqual(result, expected)
+
     def tearDown(self):
         del self.solution  # Ensure the reference is deleted.
 

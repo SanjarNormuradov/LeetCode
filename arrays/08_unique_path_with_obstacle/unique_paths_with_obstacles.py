@@ -8,7 +8,7 @@ class Solution:
 
         dp = np.ones_like(obstacle_grid, dtype=np.uint32)
         m, n = obstacle_grid.shape
-        dp[0, 0] = 1
+        dp[0][0] = 1 if obstacle_grid[0][0] == 0 else 0
         # Fill the first row
         for j in range(1, n):
             if obstacle_grid[0, j] == 0:
