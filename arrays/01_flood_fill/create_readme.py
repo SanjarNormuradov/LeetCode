@@ -54,13 +54,36 @@ def run_tests(command: List[str], pattern: re.Pattern, working_directory: str, l
 
 # Function to create the markdown table from the test results
 def create_markdown_table(test_results: List[Any], language: str) -> str:
-    table = f"## {language} Test Times\n\n"
+    table = f"### {language} Test Times\n\n"
     table += "| Test Name | Time Spent |\n"
     table += "| --- | --- |\n"
     for name, time in test_results:
         table += f"| {name} | {time} s |\n"
 
     return table
+
+
+def update_readme_with_test_results(readme_path, new_test_results_markdown):
+    # Read the existing README content
+    with open(readme_path, 'r') as file:
+        content = file.readlines()
+
+    # Find the start and end of the Test Results section
+    start_idx = None
+    for i, line in enumerate(content):
+        if line.strip() == "## Test Results":
+            start_idx = i
+            break
+
+    # If the Test Results section is found, replace it
+    if start_idx is not None:
+        content = content[:start_idx] + [new_test_results_markdown + '\n']
+    else:
+        content.append(new_test_results_markdown + '\n')
+
+    # Write the updated content back to the README
+    with open(readme_path, 'w') as file:
+        file.writelines(content)
 
 
 # Append current folder to the end of CMakeLists.txt file with add_subdirectory()
@@ -78,12 +101,26 @@ python_test_results = run_tests(python_test_command, python_test_pattern, test_d
 cpp_markdown_table = create_markdown_table(cpp_test_results, "C++")
 python_markdown_table = create_markdown_table(python_test_results, "Python")
 
-# Combine the markdown tables
-combined_markdown = f"# Test Results\n\n{cpp_markdown_table}\n{python_markdown_table}"
+decorator = """# Problem\n
+## Statement\n\n
+### Examples\n\n
+### Constraints\n\n
+# Solution\n
+## Approach\n\n
+### Complexity\n\n
+"""
 
-# Write the markdown content to README.md
-with open('README.md', 'w') as file:
-    file.write(combined_markdown)
-
-# Print a message
-print("README.md has been created with the test results.")
+if os.path.exists('README.md'):
+    # Combine the markdown tables
+    combined_markdown = f"## Test Results\n\n{cpp_markdown_table}\n{python_markdown_table}"
+    update_readme_with_test_results('README.md', combined_markdown)
+    # Print a message
+    print("README.md has been updated with the test results.")
+else:
+    # Combine the markdown tables
+    combined_markdown = f"{decorator}## Test Results\n\n{cpp_markdown_table}\n{python_markdown_table}"
+    # Write the markdown content to README.md
+    with open('README.md', 'w') as file:
+        file.write(combined_markdown)
+    # Print a message
+    print("README.md has been created with the test results.")
