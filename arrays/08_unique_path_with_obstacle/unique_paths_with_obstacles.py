@@ -6,24 +6,23 @@ class Solution:
         if not self._check_constraints(obstacle_grid):
             raise ValueError('Constraints violated')
 
-        dp = np.ones_like(obstacle_grid, dtype=np.uint32)
-        m, n = obstacle_grid.shape
-        dp[0][0] = 1 if obstacle_grid[0][0] == 0 else 0
-        # Fill the first row
-        for j in range(1, n):
-            if obstacle_grid[0, j] == 0:
-                dp[0, j] = dp[0, j - 1]
-        # Fill the first column
-        for i in range(1, m):
-            if obstacle_grid[i, 0] == 0:
-                dp[i, 0] = dp[i - 1, 0]
-        # Fill the rest
-        for i in range(1, m):
-            for j in range(1, n):
-                if obstacle_grid[i, j] == 0:
-                    dp[i, j] = dp[i - 1, j] + dp[i, j - 1]
+        row, col = obstacle_grid.shape
+        #   dp[i][j] = num paths to get to (i, j) from (0, 0)
+        #            = dp[i - 1][j] (move down) + dp[i][j - 1] (move right)
+        #  But we need only one container to store # paths as it can execute ONLY one action (move down/right) at a time
+        dp = np.zeros(col, dtype=np.uint32)
+        dp[0] = 1 if obstacle_grid[0][0] == 0 else 0  # Top-right cell (not) in collision
 
-        return dp[m - 1, n - 1]
+        for i in range(0, row):
+            if obstacle_grid[i][0]:  # Firt column in collision
+                dp[0] = 0
+            for j in range(1, col):
+                if obstacle_grid[i, j]:
+                    dp[j] = 0
+                else:
+                    dp[j] += dp[j]
+
+        return dp[col - 1]
 
     def _check_constraints(self, grid: np.ndarray) -> bool:
         m = grid.shape[0]

@@ -12,33 +12,28 @@ public:
         if (!checkConstraints(obstacleGrid)) {
             throw std::runtime_error("Constraints violated");
         }
-        int m = obstacleGrid.size();
-        int n = obstacleGrid[0].size();
+        int row = obstacleGrid.size();
+        int col = obstacleGrid[0].size();
+        // dp[i][j] = num paths to get to (i, j) from (0, 0)
+        //          = dp[i - 1][j] (move down) + dp[i][j - 1] (move right)
+        // But we need only one container to store # paths as it can execute ONLY one action (move down/right) at a time
+        vector<int> dp(col, 0);
+        dp[0] = obstacleGrid[0][0] == 0 ? 1 : 0;
 
-        vector<vector<int>> dp(m, vector<int> (n, 0));
-        dp[0][0] = obstacleGrid[0][0] == 0 ? 1 : 0;
-        // Fill the first row
-        for (int j = 1; j < n; j++) {
-            if (obstacleGrid[0][j] == 0) {
-                dp[0][j] = dp[0][j - 1];
+        for (int i = 0; i < row; i++) {
+            if (obstacleGrid[i][0]) {
+                dp[0] = 0;
             }
-        }
-        // Fill the first column
-        for (int i = 1; i < m; i++) {
-            if (obstacleGrid[i][0] == 0) {
-                dp[i][0] = dp[i - 1][0];
-            }
-        }
-        // Fill the rest of the DP table
-        for (int i = 1; i < m; i++) {
-            for (int j = 1; j < n; j++) {
-                if (obstacleGrid[i][j] == 0) {
-                    dp[i][j] = dp[i][j - 1] + dp[i - 1][j];
+            for (int j = 1; j < col; j++) {
+                if (obstacleGrid[i][j]) {
+                    dp[j] = 0;
+                } else {
+                    dp[j] += dp[j - 1];
                 }
             }
         }
 
-        return dp[m - 1][n - 1];
+        return dp[col - 1];
     }
 
 private:
