@@ -1,7 +1,6 @@
 from unittest import TestCase, TestResult, TestLoader
-from unique_paths_with_obstacles import Solution
+from unique_paths_without_obstacles import Solution
 from time import time
-import numpy as np
 
 from functools import wraps
 
@@ -41,29 +40,24 @@ def time_tests(cls):
     return cls
 
 
-class TestUniquePathsWithObstacles(TestCase):
+class TestUniquePaths(TestCase):
     def setUp(self):
         # This method is called before each test
         self.solution = Solution()
 
-    def test1_obstacleGrid1(self):
-        obstacle_grid = np.array([[0, 0, 0], [0, 1, 0], [0, 0, 0]])
-        expected = 2
-        result = self.solution.uniquePathsWithObstacles(obstacle_grid)
+    def test1_Grid1(self):
+        m = 3
+        n = 7
+        expected = 28
+        result = self.solution.unique_paths(m, n)
 
         self.assertEqual(result, expected)
 
-    def test2_obstacleGrid2(self):
-        obstacle_grid = np.array([[0, 1], [0, 0]])
-        expected = 1
-        result = self.solution.uniquePathsWithObstacles(obstacle_grid)
-
-        self.assertEqual(result, expected)
-
-    def test3_obstacleGrid3(self):
-        obstacle_grid = np.array([[1]])
-        expected = 0
-        result = self.solution.uniquePathsWithObstacles(obstacle_grid)
+    def test2_Grid2(self):
+        m = 3
+        n = 2
+        expected = 3
+        result = self.solution.unique_paths(m, n)
 
         self.assertEqual(result, expected)
 
@@ -72,7 +66,7 @@ class TestUniquePathsWithObstacles(TestCase):
 
 
 if __name__ == '__main__':
-    suite = TestLoader().loadTestsFromTestCase(TestUniquePathsWithObstacles)
+    suite = TestLoader().loadTestsFromTestCase(TestUniquePaths)
     result = CustomTestResult()
     suite.run(result)
     result.printTestTimes()

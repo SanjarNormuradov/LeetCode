@@ -38,8 +38,8 @@ Output: 0
 # Solution
 
 ## Approach
-To address this problem, a dynamic programming approach is used. A 1D array, dp, is created where `dp[j]` represents the count of distinct paths to reach cell (i, j) from the top-left corner (0, 0). The count for each cell is the sum of paths from the cell above `dp[i-1][j]` when the robot moves downwards, and from the cell to the left `dp[i][j-1]` when the robot moves right. If a cell contains an obstacle, its count is set to 0, indicating no accessible paths. 
-No need to create 2D array of a shape `m x n` to store # paths for the entire grid, as we can move along each row at a time from the 1st column to the last (i.e. the robot moves right) and summing up recently updated value of a grid cell on the left with the current grid cell, which stores already counted # paths for the cell above.
+To address this problem, a dynamic programming approach is used. A 1D array, dp, is created where `dp[j]` represents the count of distinct paths to reach cell (i, j) from the top-left corner (0, 0). The count for each cell is the sum of paths from the cell above `dp[i-1][j]` when the robot moves downwards, and from the cell to the left `dp[i][j-1]` when the robot moves right. If a cell contains an obstacle, its count is set to 0, indicating no accessible paths. \
+No need to create 2D array of a shape `m x n` to store # paths for the entire grid, as we can move along each row at a time from the 1st column to the last (i.e. the robot moves right) and summing up recently updated value of a grid cell on the left with the current grid cell, which stores already counted # paths for the cell above. \
 This method efficiently computes the total number of unique paths to the bottom-right corner while avoiding obstacles.
 
 ### Complexity
@@ -51,14 +51,14 @@ This method efficiently computes the total number of unique paths to the bottom-
 ### C++ Test Times
 | Test Name | Time Spent |
 | --- | --- |
-| test1_obstacleGrid1 | 9.69e-06 s |
-| test2_obstacleGrid2 | 3.23e-06 s |
-| test3_obstacleGrid3 | 2.15e-06 s |
+| test1_obstacleGrid1 | 8.26e-06 s |
+| test2_obstacleGrid2 | 2.49e-06 s |
+| test3_obstacleGrid3 | 1.83e-06 s |
 
 ### Python Test Times
 | Test Name | Time Spent |
 | --- | --- |
-| test1_obstacleGrid1 | 1.66e-04 s |
-| test2_obstacleGrid2 | 4.01e-05 s |
-| test3_obstacleGrid3 | 3.00e-05 s |
+| test1_obstacleGrid1 | 5.42e-03 s |
+| test2_obstacleGrid2 | 8.15e-05 s |
+| test3_obstacleGrid3 | 3.15e-05 s |
 
