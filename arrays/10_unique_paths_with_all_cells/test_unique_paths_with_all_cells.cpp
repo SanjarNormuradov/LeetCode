@@ -1,4 +1,4 @@
-#include "unique_paths_without_obstacles.cpp"
+#include "unique_paths_with_all_cells.cpp"
 #include <gtest/gtest.h>
 #include <vector>
 #include <chrono>
@@ -47,7 +47,7 @@ public:
 };
 
 
-class TestUniquePathsWithoutObstacles : public ::testing::Test {
+class TestUniquePathsWithAllCells : public ::testing::Test {
 protected:
     Solution* solution; // Each test will have its own pointer to Solution instance
 
@@ -65,20 +65,26 @@ protected:
 };
 
 
-TEST_F(TestUniquePathsWithoutObstacles, test1_Grid1) {
-    int m = 3;
-    int n = 7;
-    int expected = 28;
-    int result = solution->uniquePaths(m, n);
+TEST_F(TestUniquePathsWithAllCells, test1_Grid1) {
+    vector<vector<int>> grid = {{1, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 2, -1}};
+    int expected = 2;
+    int result = solution->uniquePathsIII(grid);
 
     ASSERT_EQ(expected, result);
 }
 
-TEST_F(TestUniquePathsWithoutObstacles, test2_Grid2) {
-    int m = 3;
-    int n = 2;
-    int expected = 3;
-    int result = solution->uniquePaths(m, n);
+TEST_F(TestUniquePathsWithAllCells, test2_Grid2) {
+    vector<vector<int>> grid = {{1, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 2}};
+    int expected = 4;
+    int result = solution->uniquePathsIII(grid);
+
+    ASSERT_EQ(expected, result);
+}
+
+TEST_F(TestUniquePathsWithAllCells, test3_Grid3) {
+    vector<vector<int>> grid = {{0, 1}, {2, 0}};
+    int expected = 0;
+    int result = solution->uniquePathsIII(grid);
 
     ASSERT_EQ(expected, result);
 }

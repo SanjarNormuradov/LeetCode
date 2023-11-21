@@ -2,7 +2,7 @@ import numpy as np
 
 
 class Solution:
-    def unique_paths(self, grid: np.ndarray) -> int:
+    def unique_paths_III(self, grid: np.ndarray) -> int:
         if not self._check_constraints(grid):
             raise ValueError('Constraints violated')
         non_obstacle = 0
