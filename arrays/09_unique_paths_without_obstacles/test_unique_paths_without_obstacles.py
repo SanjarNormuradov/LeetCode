@@ -40,7 +40,7 @@ def time_tests(cls):
     return cls
 
 
-class TestUniquePaths(TestCase):
+class TestUniquePathsWithoutObstacles(TestCase):
     def setUp(self):
         # This method is called before each test
         self.solution = Solution()
@@ -66,7 +66,7 @@ class TestUniquePaths(TestCase):
 
 
 if __name__ == '__main__':
-    suite = TestLoader().loadTestsFromTestCase(TestUniquePaths)
+    suite = TestLoader().loadTestsFromTestCase(TestUniquePathsWithoutObstacles)
     result = CustomTestResult()
     suite.run(result)
     result.printTestTimes()

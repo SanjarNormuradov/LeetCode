@@ -47,7 +47,7 @@ public:
 };
 
 
-class TestUniquePaths : public ::testing::Test {
+class TestUniquePathsWithoutObstaclesWithoutObstacles : public ::testing::Test {
 protected:
     Solution* solution; // Each test will have its own pointer to Solution instance
 
@@ -65,7 +65,7 @@ protected:
 };
 
 
-TEST_F(TestUniquePaths, test1_Grid1) {
+TEST_F(TestUniquePathsWithoutObstacles, test1_Grid1) {
     int m = 3;
     int n = 7;
     int expected = 28;
@@ -74,7 +74,7 @@ TEST_F(TestUniquePaths, test1_Grid1) {
     ASSERT_EQ(expected, result);
 }
 
-TEST_F(TestUniquePaths, test2_Grid2) {
+TEST_F(TestUniquePathsWithoutObstacles, test2_Grid2) {
     int m = 3;
     int n = 2;
     int expected = 3;
