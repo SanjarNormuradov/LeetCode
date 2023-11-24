@@ -1,7 +1,6 @@
-from unittest import TestCase, TestResult, TestLoader, TextTestRunner
-from unique_paths_with_all_cells import Solution
+from unittest import TestCase, TestResult, TestLoader
+from roman_to_int import Solution
 from time import time
-import numpy as np
 
 from functools import wraps
 
@@ -41,29 +40,30 @@ def time_tests(cls):
     return cls
 
 
-class TestUniquePathsWithAllCells(TestCase):
+@time_tests
+class TestRomanToInt(TestCase):
     def setUp(self):
         # This method is called before each test
         self.solution = Solution()
 
-    def test1_Grid1(self):
-        grid = np.array([[1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 2, -1]])
-        expected = 2
-        result = self.solution.unique_paths_III(grid)
+    def test1_III(self):
+        s = "III"
+        expected = 3
+        result = self.solution.romant_to_int(s)
 
         self.assertEqual(result, expected)
 
-    def test2_Grid2(self):
-        grid = np.array([[1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 2]])
-        expected = 4
-        result = self.solution.unique_paths_III(grid)
+    def test2_LVIII(self):
+        s = "LVIII"
+        expected = 58
+        result = self.solution.romant_to_int(s)
 
         self.assertEqual(result, expected)
 
-    def test2_Grid3(self):
-        grid = np.array([[0, 1], [2, 0]])
-        expected = 0
-        result = self.solution.unique_paths_III(grid)
+    def test3_MCMXCIV(self):
+        s = "MCMXCIV"
+        expected = 1994
+        result = self.solution.romant_to_int(s)
 
         self.assertEqual(result, expected)
 
@@ -72,9 +72,7 @@ class TestUniquePathsWithAllCells(TestCase):
 
 
 if __name__ == '__main__':
-    suite = TestLoader().loadTestsFromTestCase(TestUniquePathsWithAllCells)
+    suite = TestLoader().loadTestsFromTestCase(TestRomanToInt)
     result = CustomTestResult()
-    # runner = TextTestRunner(verbosity=2)
-    # runner.run(suite)
     suite.run(result)
     result.printTestTimes()

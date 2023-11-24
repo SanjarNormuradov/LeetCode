@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include <unordered_set>
 #include <cmath>
 #include <stdexcept>
 #include <cstdint>
@@ -26,7 +27,9 @@ public:
                 total += roman[s[i]];
             }
         }
-
+        if (total < 1 || total > 3999) {
+            throw std::runtime_error("Constraints violated");
+        }
     return total;
     }
 
@@ -34,7 +37,12 @@ private:
     // Helper function to check the constraints
     bool checkConstraints(const string& s) {
         if (s.size() < 1 || s.size() > 15) return false;
-        
+        unordered_set<char> roman = {'I', 'V', 'X', 'L', 'C', 'D', 'M'};
+        for (auto& ch : s) {
+            if (roman.find(ch) == roman.end()) {
+                return false;
+            }
+        }
         return true;
     }
 };

@@ -43,29 +43,29 @@ Note that the starting and ending square can be anywhere in the grid.
 # Solution
 
 ## Approach
-- Backtracking: Explore paths from the start square to the end square using recursion.
-- Count Non-Obstacle Squares: Determine the total number of squares that can be walked over.
-- Recursive Exploration: Move recursively in four directions from each square.
-- Visit Tracking: Mark squares as visited during exploration and unvisited during backtracking.
-- Valid Path Counting: Increase path count when the end is reached and all non-obstacle squares are visited.
+- __Backtracking__: Explore paths from the start square to the end square using recursion.
+- __Count Non-Obstacle Squares__: Determine the total number of squares that can be walked over.
+- __Recursive Exploration__: Move recursively in four directions from each square.
+- __Visit Tracking__: Mark squares as visited during exploration and unvisited during backtracking.
+- __Valid Path Counting__: Increase path count when the end is reached and all non-obstacle squares are visited.
 
 ### Complexity
-- __Time__: O(4 (m * n)) - In the worst case, the algorithm explores all four directions at each step. The grid has m*n squares, leading to a time complexity of O(4^(m*n)). However, this is a loose upper bound since the algorithm stops exploring further when it hits obstacles or the grid boundaries.
-- __Memory__: O(m*n). Additionally, if modifying the grid in place is not considered as extra space, then the space complexity is solely due to the recursion stack.
+- __Time__: O(4 (m * n)) - In the worst case, the algorithm explores all four directions at each step. The grid has `m x n` squares, leading to a time complexity of O(4^(m * n)). However, this is a loose upper bound since the algorithm stops exploring further when it hits obstacles or the grid boundaries.
+- __Memory__: O(m * n). Additionally, if modifying the grid in place is not considered as extra space, then the space complexity is solely due to the recursion stack.
 
 ## Test Results
 
 ### C++ Test Times
 | Test Name | Time Spent |
 | --- | --- |
-| test1_Grid1 | 1.91e-05 s |
-| test2_Grid2 | 2.12e-05 s |
-| test3_Grid3 | 3.55e-06 s |
+| test1_Grid1 | 4.62e-05 s |
+| test2_Grid2 | 3.83e-05 s |
+| test3_Grid3 | 4.07e-06 s |
 
 ### Python Test Times
 | Test Name | Time Spent |
 | --- | --- |
-| test1_Grid1 | 2.62e-04 s |
-| test2_Grid2 | 4.26e-04 s |
+| test1_Grid1 | 2.63e-04 s |
+| test2_Grid2 | 4.33e-04 s |
 | test2_Grid3 | 3.15e-05 s |
 

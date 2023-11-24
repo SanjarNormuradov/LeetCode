@@ -18,6 +18,4 @@ CACHE*
 *.pyc
 
 # Ignore testing log files
-Testing/
-build/Testing/Temporary/
-
+*Testing/Temporary/*

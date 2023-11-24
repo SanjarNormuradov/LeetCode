@@ -26,11 +26,7 @@ class Solution:
         grid[x, y] = -1
         remain -= 1
 
-        up = self._backtrack(grid, x - 1, y, remain)
-        down = self._backtrack(grid, x + 1, y, remain)
-        left = self._backtrack(grid, x, y + 1, remain)
-        right = self._backtrack(grid, x, y - 1, remain)
-        paths = up + down + left + right
+        paths = self._backtrack(grid, x - 1, y, remain) + self._backtrack(grid, x + 1, y, remain) + self._backtrack(grid, x, y + 1, remain) + self._backtrack(grid, x, y - 1, remain)
 
         # Mark the square as unvisited to be considered by other possible paths
         grid[x, y] = 0

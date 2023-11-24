@@ -7,11 +7,14 @@ using namespace std;
 
 class Solution {
 public:
-    int uniquePathsIII(std::vector<std::vector<int>>& grid) {
+    int uniquePathsIII(vector<vector<int>>& grid) {
+        if (!checkConstraints(grid)) {
+            throw std::runtime_error("Constraints violated");
+        }
         int zeroCount = 0, startX = 0, startY = 0;
-        for (int i = 0; i < grid.size(); ++i) {
-            for (int j = 0; j < grid[0].size(); ++j) {
-                if (grid[i][j] == 0) ++zeroCount;
+        for (int i = 0; i < grid.size(); i++) {
+            for (int j = 0; j < grid[0].size(); j++) {
+                if (grid[i][j] >= 0) zeroCount++;
                 if (grid[i][j] == 1) {
                     startX = i;
                     startY = j;
@@ -22,15 +25,15 @@ public:
     }
 
 private:
-    int backtrack(std::vector<std::vector<int>>& grid, int x, int y, int remain) {
+    int backtrack(vector<vector<int>>& grid, int x, int y, int remain) {
         if (x < 0 || x >= grid.size() || y < 0 || y >= grid[0].size() || grid[x][y] == -1) {
             return 0;
         }
         if (grid[x][y] == 2) {
-            return remain == -1 ? 1 : 0;
+            return remain == 1 ? 1 : 0;
         }
-
-        grid[x][y] = -1; // mark as visited
+        // Mark the square as visited -> unreachable just like obstacle
+        grid[x][y] = -1;
         remain--;
 
         int totalPaths = backtrack(grid, x + 1, y, remain) +
@@ -38,7 +41,8 @@ private:
                          backtrack(grid, x, y + 1, remain) +
                          backtrack(grid, x, y - 1, remain);
 
-        grid[x][y] = 0; // backtrack
+        // Mark the square as unvisited to be considered by other possible paths
+        grid[x][y] = 0;
         remain++;
 
         return totalPaths;
