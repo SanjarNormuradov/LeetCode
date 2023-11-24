@@ -35,12 +35,16 @@ class Solution:
         return paths
 
     def _check_constraints(self, grid: np.ndarray) -> bool:
-        m, n = grid.shape
+        m = grid.shape[0]
         if m == 0 or m > 20:
             return False
-        if n == 0 or n > 20:
-            return False
+
         for i in range(m):
+            n = grid[i].shape[0]
+            if n == 0 or n > 20:
+                return False
+            if m * n == 0 or m * n > 20:
+                return False
             for j in range(n):
                 if grid[i, j] < -1 or grid[i, j] > 2:
                     return False

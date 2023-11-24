@@ -74,7 +74,7 @@ class TestUniquePathsWithAllCells(TestCase):
 if __name__ == '__main__':
     suite = TestLoader().loadTestsFromTestCase(TestUniquePathsWithAllCells)
     result = CustomTestResult()
-    # runner = TextTestRunner(verbosity=2)
+    runner = TextTestRunner(verbosity=2)
     # runner.run(suite)
     suite.run(result)
     result.printTestTimes()

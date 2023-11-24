@@ -1,4 +1,4 @@
-from unittest import TestCase, TestResult, TestLoader
+from unittest import TestCase, TestResult, TestLoader, TextTestRunner
 from roman_to_int import Solution
 from time import time
 
@@ -74,5 +74,7 @@ class TestRomanToInt(TestCase):
 if __name__ == '__main__':
     suite = TestLoader().loadTestsFromTestCase(TestRomanToInt)
     result = CustomTestResult()
+    runner = TextTestRunner(verbosity=2)
+    # runner.run(suite)
     suite.run(result)
     result.printTestTimes()

@@ -1,4 +1,4 @@
-from unittest import TestCase, TestResult, TestLoader
+from unittest import TestCase, TestResult, TestLoader, TextTestRunner
 from two_sum import Solution
 from time import time
 
@@ -76,5 +76,7 @@ class TestTwoSum(TestCase):
 if __name__ == '__main__':
     suite = TestLoader().loadTestsFromTestCase(TestTwoSum)
     result = CustomTestResult()
+    runner = TextTestRunner(verbosity=2)
+    # runner.run(suite)
     suite.run(result)
     result.printTestTimes()

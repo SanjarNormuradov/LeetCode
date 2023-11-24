@@ -51,11 +51,11 @@ private:
     // Helper function to check the constraints
     bool checkConstraints(const vector<vector<int>>& grid) {
         int m = grid.size();
-        int n = grid[0].size();
         if (m == 0 || m > 20) return false;
-        if (n == 0 || n > 20) return false;
 
         for (auto& row : grid) {
+            if (row.size() == 0 || row.size() > 20) return false;
+            if (row.size() * m == 0 || row.size() * m > 20) return false;
             for (auto& cell : row) {
                 if (cell < -1 || cell > 2) {
                     return false;

@@ -1,4 +1,4 @@
-from unittest import TestCase, TestResult, TestLoader
+from unittest import TestCase, TestResult, TestLoader, TextTestRunner
 from unique_paths_without_obstacles import Solution
 from time import time
 
@@ -68,5 +68,7 @@ class TestUniquePathsWithoutObstacles(TestCase):
 if __name__ == '__main__':
     suite = TestLoader().loadTestsFromTestCase(TestUniquePathsWithoutObstacles)
     result = CustomTestResult()
+    runner = TextTestRunner(verbosity=2)
+    # runner.run(suite)
     suite.run(result)
     result.printTestTimes()

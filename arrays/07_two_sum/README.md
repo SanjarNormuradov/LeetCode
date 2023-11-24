@@ -32,8 +32,8 @@ Output: [0,1]
 To solve the problem of finding two numbers in an array that add up to a given target, a hash table (unordered_map, dictionary) is used for efficient lookups. The algorithm iterates through the array, calculating the complement of each number by subtracting it from the target. It then checks if this complement already exists in the hash table. If it does, the indices of the current number and its complement are returned as the solution. If not, the current number and its index are stored in the hash table for future reference. This approach ensures that each element is checked only once, leading to an efficient solution.
 
 ### Complexity
-- __Time__: O(n). The algorithm iterates through the array once. The time complexity for each lookup and insertion operation in the hash table is O(1).
-- __Memory__: O(n). In the worst case, the hash table may store an entry for each element in the array.
+- __Time__: `O(n)`. The algorithm iterates through the array once. The time complexity for each lookup and insertion operation in the hash table is O(1).
+- __Memory__: `O(n)`. In the worst case, the hash table may store an entry for each element in the array.
 
 ## Test Results
 

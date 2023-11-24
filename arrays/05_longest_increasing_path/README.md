@@ -33,8 +33,8 @@ Output: 1
 To find the longest increasing path in a matrix, a __Depth-First Search (DFS)__ algorithm combined with memoization is used. Starting from each cell, the algorithm explores all possible paths that can be taken by moving up, down, left, or right to adjacent cells with higher values. This exploration is recursive, following the DFS pattern. To improve efficiency, the length of the longest path from each cell is stored (memoized) after its first computation. This prevents redundant recalculations for cells already visited. The final answer is the maximum length found among all starting cells, representing the longest increasing path in the matrix.
 
 ### Complexity
-- __Time__: O(m * n). Each cell in the m x n matrix is visited once for the Depth-First Search (DFS), with memoization ensuring no repeated calculations.
-- __Memory__: O(m * n). The memoization table, which stores the longest path from each cell, occupies space proportional to the matrix size.
+- __Time__: `O(m * n)`. Each cell in the m x n matrix is visited once for the Depth-First Search (DFS), with memoization ensuring no repeated calculations.
+- __Memory__: `O(m * n)`. The memoization table, which stores the longest path from each cell, occupies space proportional to the matrix size.
 
 ## Test Results
 

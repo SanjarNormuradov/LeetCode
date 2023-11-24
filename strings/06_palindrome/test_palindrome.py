@@ -1,4 +1,4 @@
-from unittest import TestCase, TestResult, TestLoader
+from unittest import TestCase, TestResult, TestLoader, TextTestRunner
 from palindrome import Solution
 from time import time
 
@@ -74,5 +74,7 @@ class TestPalindrome(TestCase):
 if __name__ == '__main__':
     suite = TestLoader().loadTestsFromTestCase(TestPalindrome)
     result = CustomTestResult()
+    runner = TextTestRunner(verbosity=2)
+    # runner.run(suite)
     suite.run(result)
     result.printTestTimes()

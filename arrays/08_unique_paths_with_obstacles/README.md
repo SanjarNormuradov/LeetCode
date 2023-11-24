@@ -43,8 +43,8 @@ No need to create 2D array of a shape `m x n` to store # paths for the entire gr
 This method efficiently computes the total number of unique paths to the bottom-right corner while avoiding obstacles.
 
 ### Complexity
-- __Time__: O(m * n), as each cell in the `m x n` grid is processed once
-- __Memory__: O(n) for the `dp` array storing paths for each cell
+- __Time__: `O(m * n)`, as each cell in the `m x n` grid is processed once
+- __Memory__: `O(n)` for the `dp` array storing paths for each cell
 
 ## Test Results
 

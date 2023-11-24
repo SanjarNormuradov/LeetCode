@@ -52,8 +52,8 @@ __Add Regular Cases__: If a symbol is not followed by a larger symbol, simply ad
 __Return the Total__: After processing all symbols, return the total value.
 
 ### Complexity
-- __Time__: O(len(s)), This reflects the worst case when all characters in s are non-increasing.
-- __Memory__: O(1), as the space used is constant (map or dict with 7 key-value pairs) and independent of the input size.
+- __Time__: `O(len(s))`, This reflects the worst case when all characters in s are non-increasing.
+- __Memory__: `O(1)`, as the space used is constant (map or dict with 7 key-value pairs) and independent of the input size.
 
 ## Test Results
 

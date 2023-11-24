@@ -28,8 +28,8 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 To determine if an integer is a palindrome, the solution involves reversing the number and comparing it with the original. Negative numbers are immediately considered non-palindromic. The reverse of the integer is constructed by iteratively extracting and appending its digits. Finally, the original number and its reverse are compared to check for palindromicity.
 
 ### Complexity
-- __Time__: O(log x), where x is the input integer. This reflects the number of digits in x.
-- __Memory__: O(1), as the space used is constant and independent of the input size.
+- __Time__: `O(log x)`, where x is the input integer. This reflects the number of digits in x.
+- __Memory__: `O(1)`, as the space used is constant and independent of the input size.
 
 ## Test Results
 

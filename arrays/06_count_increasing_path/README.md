@@ -39,8 +39,8 @@ The total number of paths is 2 + 1 = 3.
 This grid problem is solved using a blend of __Depth-First-Search (DFS)__ and dynamic programming for efficiency. The strategy involves exhaustively searching through the grid, cell by cell, and exploring all paths that progress to adjacent cells with increasing values. Dynamic programming enhances this process by storing the count of paths from each cell after their initial calculation, eliminating repetitive computations. When revisiting a cell, the stored count is reused. The overall solution sums the counts from each cell, providing the total number of increasing paths in the grid. This approach effectively combines thorough path exploration with computational optimization.
 
 ### Complexity
-- __Time__: O(m * n). Each cell in the m x n grid is examined once using Depth-First Search (DFS), with dynamic programming ensuring no redundant path calculations.
-- __Memory__: O(m * n). The space is mainly used for storing the count of paths from each cell, proportional to the grid's size.
+- __Time__: `O(m * n)`. Each cell in the m x n grid is examined once using Depth-First Search (DFS), with dynamic programming ensuring no redundant path calculations.
+- __Memory__: `O(m * n)`. The space is mainly used for storing the count of paths from each cell, proportional to the grid's size.
 
 ## Test Results
 
