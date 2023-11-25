@@ -19,3 +19,4 @@ CACHE*
 
 # Ignore testing log files
 *Testing/Temporary/*
+Testing/
