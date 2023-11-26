@@ -1,7 +1,6 @@
 from unittest import TestCase, TestResult, TestLoader, TextTestRunner
 from lru_cache import LRUCache
 from time import time
-import numpy as np
 
 from functools import wraps
 
