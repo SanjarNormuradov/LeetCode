@@ -1,7 +1,8 @@
-#include "lru_cache.cpp"
+#include "add_two_numbers.cpp"
 #include <gtest/gtest.h>
 #include <chrono>
 #include <iostream>
+#include <vector>
  
 using namespace std;
 
@@ -46,61 +47,59 @@ public:
 };
 
 
-class TestLRUCache : public ::testing::Test {
+class TestAddTwoNumbers : public ::testing::Test {
 protected:
-    LRUCache* cache; // Each test will have its own pointer to LRUCache instance
+    Solution* solution; // Each test will have its own pointer to Solution instance
 
     void SetUp() override {
         // Code here will be called immediately after the constructor 
         // (right before each test).
-        cache = new LRUCache();
+        solution = new Solution();
     }
 
     void TearDown() override {
         // Code here will be called immediately after each test 
         // (right before the destructor).
-        delete cache;
+        delete solution;
     }
 };
 
 
-TEST_F(TestLRUCache, test1_Cache1) {
-    cache->setCapacity(2);
-    cache->put(1, 1);
-    cache->put(2, 2);
-    int result = cache->get(1);
-    int expected = 1;
-    ASSERT_EQ(expected, result);
-    
-    cache->put(3, 3);
-    result = cache->get(2);
-    expected = -1;
-    ASSERT_EQ(expected, result);
-
-    cache->put(4, 4);
-    result = cache->get(1);
-    expected = -1;
-    ASSERT_EQ(expected, result);
-
-    result = cache->get(3);
-    expected = 3;
-    ASSERT_EQ(expected, result);
-
-    result = cache->get(4);
-    expected = 4;
-    ASSERT_EQ(expected, result);
+TEST_F(TestAddTwoNumbers, test1_807) {
+    ListNode *l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
+    ListNode *l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+    ListNode* result = solution->addTwoNumbers(l1, l2);
+    ListNode* nextNode = nullptr;
+    vector<int> expected = {7, 0, 8};
+    for (auto& digit : expected) {
+        nextNode = result->next;
+        ASSERT_EQ(digit, result->val);
+        delete result;
+        result = nextNode;
+    }
 }
 
-TEST_F(TestLRUCache, test2_Cache2) {
-    cache->setCapacity(2);
-    cache->put(1, 1);
-    cache->put(2, 2);
-    cache->put(2, 3);
-    int result = cache->get(2);
-    int expected = 3;
-    ASSERT_EQ(expected, result);
+TEST_F(TestAddTwoNumbers, test2_0) {
+    ListNode *l1 = new ListNode();
+    ListNode *l2 = new ListNode();
+    ListNode* result = solution->addTwoNumbers(l1, l2);
+    ASSERT_EQ(0, result->val);
+    delete result;
 }
 
+TEST_F(TestAddTwoNumbers, test3_10009998) {
+    ListNode *l1 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))));
+    ListNode *l2 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))));
+    ListNode* result = solution->addTwoNumbers(l1, l2);
+    ListNode* nextNode = nullptr;
+    vector<int> expected = {8, 9, 9, 9, 0, 0, 0, 1};
+    for (auto& digit : expected) {
+        nextNode = result->next;
+        ASSERT_EQ(digit, result->val);
+        delete result;
+        result = nextNode;
+    }
+}
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
