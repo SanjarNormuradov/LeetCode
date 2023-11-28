@@ -6,6 +6,7 @@
 # !important-config.json
 
 # Ignore cmake files
+build/
 *.cmake
 *.make
 Makefile
@@ -20,3 +21,5 @@ CACHE*
 # Ignore testing log files
 *Testing/Temporary/*
 Testing/
+
+mujin/
