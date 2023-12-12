@@ -1,5 +1,5 @@
 class Solution:
-    def is_palindrome(self, s: str) -> bool:
+    def can_permute_palindrome(self, s: str) -> bool:
         if not self._check_constraints(s):
             raise ValueError("Constraints violated")
         odd_cnt = 0

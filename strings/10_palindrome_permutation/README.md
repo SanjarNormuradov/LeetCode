@@ -37,14 +37,17 @@ This rule is based on the symmetry required for a palindrome, where characters m
 ### C++ Test Times
 | Test Name | Time Spent |
 | --- | --- |
-| test1_code | 1.12e-05 s |
-| test2_aab | 5.28e-06 s |
-| test3_cerarec | 9.92e-06 s |
+| test1_code | 1.95e-05 s |
+| test2_aab | 9.07e-06 s |
+| test3_cerarec | 1.88e-05 s |
+| test1_aabb | 2.36e-05 s |
+| test2_aabbc | 8.51e-06 s |
+| test3_abc | 2.39e-06 s |
 
 ### Python Test Times
 | Test Name | Time Spent |
 | --- | --- |
-| test1_code | 1.06e-04 s |
-| test2_aab | 4.96e-05 s |
-| test3_cerarec | 3.39e-05 s |
+| test1_code | 2.91e-05 s |
+| test2_aab | 1.57e-05 s |
+| test3_cerarec | 1.29e-05 s |
 

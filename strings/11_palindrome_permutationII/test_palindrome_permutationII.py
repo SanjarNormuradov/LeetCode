@@ -1,5 +1,5 @@
 from unittest import TestCase, TestResult, TestLoader, TextTestRunner
-from palindrome_permutation import Solution
+from palindrome_permutationII import Solution
 from time import time
 
 from functools import wraps
@@ -41,38 +41,41 @@ def time_tests(cls):
 
 
 @time_tests
-class TestPalindromePermutation(TestCase):
+class TestPalindromePermutationII(TestCase):
     def setUp(self):
         # This method is called before each test
         self.solution = Solution()
 
-    def test1_code(self):
-        s = "code"
-        expected = False
-        result = self.solution.can_permute_palindrome(s)
+    def test1_aabb(self):
+        s = "aabb"
+        expected = ["abba", "baab"]
+        result = self.solution.generate_palindromes(s)
+        expected.sort()
+        result.sort()
+        self.assertListEqual(result, expected)
 
-        self.assertEqual(result, expected)
+    def test2_aabbc(self):
+        s = "aabbc"
+        expected = ["abcba", "bacab"]
+        result = self.solution.generate_palindromes(s)
+        expected.sort()
+        result.sort()
+        self.assertListEqual(result, expected)
 
-    def test2_aab(self):
-        s = "aab"
-        expected = True
-        result = self.solution.can_permute_palindrome(s)
-
-        self.assertEqual(result, expected)
-
-    def test3_cerarec(self):
-        s = "cerarec"
-        expected = True
-        result = self.solution.can_permute_palindrome(s)
-
-        self.assertEqual(result, expected)
+    def test3_abc(self):
+        s = "abc"
+        expected = []
+        result = self.solution.generate_palindromes(s)
+        expected.sort()
+        result.sort()
+        self.assertListEqual(result, expected)
 
     def tearDown(self):
         del self.solution  # Ensure the reference is deleted.
 
 
 if __name__ == '__main__':
-    suite = TestLoader().loadTestsFromTestCase(TestPalindromePermutation)
+    suite = TestLoader().loadTestsFromTestCase(TestPalindromePermutationII)
     result = CustomTestResult()
     runner = TextTestRunner(verbosity=2)
     # runner.run(suite)
