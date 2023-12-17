@@ -75,7 +75,7 @@ class TestMaxSumTwoNoOverlap(TestCase):
     def test4_Len53(self):
         nums = [4, 5, 14, 16, 16, 20, 7, 13, 8, 15]
         first_len = 5
-        second_len = 2
+        second_len = 3
         expected = 109
         result = self.solution.max_sum_two_no_overlap(nums, first_len, second_len)
 

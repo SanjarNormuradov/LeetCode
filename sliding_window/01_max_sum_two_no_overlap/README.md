@@ -38,26 +38,30 @@ Explanation: One choice of subarrays is [14,16,16,20,7] with length 5, and [13,8
 # Solution
 
 ## Approach
-
+__Create containers__: Create two list of size nums.size() to store max prefix and suffix sums. 
+__Iterate through the array__: Slide a window of size firstLen from left to right, computing max prefix sum of the subarray within the window at each step. Do the same for a window of size secondLen from right to left, computing the max suffix sum.
+__Find the max subarray sum__: Go through [firstLen - 1, nums.size() - secondLen] indices of the prefix list, and [firstLen, nums.size() - secondLen - 1] of the suffix list to compute the max possible sum.
+__Repeat with swapped lengths__: Repeat the process for swapped lenghts firstLen -> secondLen and vice versa.
 
 ### Complexity
-
+- __Time__: `O(n)`, where n is the length of nums.
+- __Memory__: `O(n)`, for two new lists dp1/dp2 created to store prefix/suffix sums.
 
 ## Test Results
 
 ### C++ Test Times
 | Test Name | Time Spent |
 | --- | --- |
-| test1_Len12 | 7.94e-06 s |
-| test2_Len32 | 3.14e-06 s |
-| test3_Len43 | 2.97e-06 s |
-| test4_Len53 | 2.68e-06 s |
+| test1_Len12 | 4.88e-06 s |
+| test2_Len32 | 1.60e-06 s |
+| test3_Len43 | 1.55e-06 s |
+| test4_Len53 | 1.53e-06 s |
 
 ### Python Test Times
 | Test Name | Time Spent |
 | --- | --- |
-| test1_Len12 | 6.87e-05 s |
-| test2_Len32 | 3.62e-05 s |
-| test3_Len43 | 3.10e-05 s |
-| test4_Len53 | 1.65e-04 s |
+| test1_Len12 | 5.29e-05 s |
+| test2_Len32 | 3.43e-05 s |
+| test3_Len43 | 3.43e-05 s |
+| test4_Len53 | 3.05e-05 s |
 

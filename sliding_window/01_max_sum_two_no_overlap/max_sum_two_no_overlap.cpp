@@ -13,24 +13,7 @@ public:
         if (!checkConstraints(nums, firstLen, secondLen)) {
             throw std::runtime_error("Constraints violated");
         }
-        // Prefix Sum vector with additional 0 at the front
-        vector<int> prefixSum(nums.size() + 1, 0);
-        for (int i = 1; i < nums.size() + 1; i++) {
-            prefixSum[i] += nums[i - 1] + prefixSum[i - 1];
-        }
-        int maxSum = 0;
-        for (int l = 0; l < nums.size() + 1 - firstLen; l++) {
-            int lr = l + firstLen;
-            int lsum = prefixSum[lr] - prefixSum[l];
-            for (int r = nums.size(); r > secondLen - 1; r--) {
-                int rl = r - secondLen;
-                if (!((lr > rl && lr <= r) || (l >= rl && l < r) || (rl >= l && r <= lr))) {
-                    int rsum = prefixSum[r] - prefixSum[rl];
-                    maxSum = max((lsum) + (rsum), maxSum);
-                }
-            }
-        }
-        return maxSum;
+        return max(_slider(nums, firstLen, secondLen), _slider(nums, secondLen, firstLen));
     }
 
 private:
@@ -44,5 +27,36 @@ private:
             if (num < 0 || num > 1000) return false;
         }
         return true;
+    }
+    int _slider(const vector<int>& nums, int len1, int len2) {
+        int n = nums.size();
+        vector<int> dp1(n, 0), dp2(n, 0);
+        int sum = 0;
+        // prefix sum for a window of size len1
+        for (int i = 0; i < n; i++) {
+            if (i < len1) { // prefix sum for a subarray of size < len1
+                sum += nums[i];
+                dp1[i] = sum;
+            } else { // max sum of the subarray of size == len1, a window slides from left to right
+                sum += nums[i] - nums[i - len1];
+                dp1[i] = max(dp1[i - 1], sum);
+            }
+        }
+        sum = 0;
+        // suffix sum for a window of size len2
+        for (int i = n - 1; i >= 0; i--) {
+            if (i > n - 1 - len2) { // suffix sum for a subarray of size < len2
+                sum += nums[i];
+                dp2[i] = sum;
+            } else { // max sum of the subarray of size == len2, a window slides from right to left
+                sum += nums[i] - nums[i + len2];
+                dp2[i] = max(dp2[i - 1], sum);
+            }
+        }
+        int ans = 0;
+        for (int i = len1 - 1; i < n - len2; i++) {
+            ans = max(ans, dp1[i] + dp2[i + 1]);
+        }
+        return ans;
     }
 };
