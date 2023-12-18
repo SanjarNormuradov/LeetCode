@@ -34,7 +34,7 @@ private:
         if (n < 1 || n > 45) return false;
         return true;
     }
-    int backward_memo(int i, int n, vector<int> memo) {
+    int backward_memo(int i, int n, vector<int>& memo) {
         if (i > n) return 0; // overshoot
         else if (i == n) return 1; // reached the end
         if (memo[i] > 0) return memo[i]; // computed before
