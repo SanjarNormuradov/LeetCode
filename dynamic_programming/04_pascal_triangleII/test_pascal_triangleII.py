@@ -1,5 +1,5 @@
 from unittest import TestCase, TestResult, TestLoader, TextTestRunner
-from pascal_triangle import Solution
+from pascal_triangleII import Solution
 from time import time
 
 from functools import wraps
@@ -40,29 +40,29 @@ def time_tests(cls):
     return cls
 
 
-class TestPascalTriangle(TestCase):
+class TestPascalTriangleII(TestCase):
     def setUp(self):
         # This method is called before each test
         self.solution = Solution()
 
-    def test1_n5(self):
-        n = 5
-        expected = [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
-        result = self.solution.generate(n)
+    def test1_n4(self):
+        row_index = 4
+        expected = [1, 4, 6, 4, 1]
+        result = self.solution.get_row(row_index)
 
         self.assertListEqual(result, expected)
 
-    def test2_n1(self):
-        n = 1
-        expected = [[1]]
-        result = self.solution.generate(n)
+    def test2_n0(self):
+        row_index = 0
+        expected = [1]
+        result = self.solution.get_row(row_index)
 
         self.assertListEqual(result, expected)
 
-    def test3_n7(self):
-        n = 7
-        expected = [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1], [1, 5, 10, 10, 5, 1], [1, 6, 15, 20, 15, 6, 1]]
-        result = self.solution.generate(n)
+    def test3_n6(self):
+        row_index = 6
+        expected = [1, 6, 15, 20, 15, 6, 1]
+        result = self.solution.get_row(row_index)
 
         self.assertListEqual(result, expected)
 
@@ -71,7 +71,7 @@ class TestPascalTriangle(TestCase):
 
 
 if __name__ == '__main__':
-    suite = TestLoader().loadTestsFromTestCase(TestPascalTriangle)
+    suite = TestLoader().loadTestsFromTestCase(TestPascalTriangleII)
     result = CustomTestResult()
     runner = TextTestRunner(verbosity=2)
     # runner.run(suite)

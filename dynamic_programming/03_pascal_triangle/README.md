@@ -26,7 +26,6 @@ Output: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1],[1,5,10,10,5,1],[1,6,15,20,15,6
 # Solution
 
 ## Approach
- Finally append 1 before pushing into global container which stores the answer.
 - __Create container__: Use the same container for each row as it stores numbers from the previous row above. Initialize the answer with a container of 1 as `numRows >= 1`
 - __Handle edge cases__: If `numRows > 1`, append the next row of 2 elements (1). All the rest will be filled in the main loop. 
 - __Compute each element__: If `numRows > 2`, iterate through each row starting from the end and update each element with the sum of itself (which is equal to the element value in the row above) and the element value on the left in the current row.

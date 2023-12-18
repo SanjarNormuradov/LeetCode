@@ -3,17 +3,17 @@ from copy import copy
 
 
 class Solution:
-    def generate(self, n: int) -> List[List[int]]:
-        if not self._check_constraints(n):
+    def generate(self, num_rows: int) -> List[List[int]]:
+        if not self._check_constraints(num_rows):
             raise ValueError('Constraints violated')
         ans: List[List[int]] = []
         dp = [1]
         ans.append(copy(dp))
-        if n > 1:
+        if num_rows > 1:
             dp.append(1)
             ans.append(copy(dp))
-        if n > 2:
-            for j in range(2, n):
+        if num_rows > 2:
+            for j in range(2, num_rows):
                 for i in range(j - 1, 0, -1):
                     dp[i] += dp[i - 1]
                 dp.append(1)

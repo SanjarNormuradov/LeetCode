@@ -9,32 +9,28 @@ using namespace std;
 
 class Solution {
 public:
-    vector<vector<int>> generate(int numRows) {
-        if (!checkConstraints(numRows)) {
+    vector<int> getRow(int rowIndex) {
+        if (!checkConstraints(rowIndex)) {
             throw std::runtime_error("Constraints violated");
         }
-        vector<vector<int>> ans;
         vector<int> dp(1, 1);
-        ans.push_back(dp);
-        if (numRows > 1) {
+        if (rowIndex > 0) {
             dp.push_back(1);
-            ans.push_back(dp);
         }
-        if (numRows > 2) {
-            for (int j = 2; j < numRows; j++) {
-                for (int i = j - 1; i > 0; i--) {
+        if (rowIndex > 1) {
+            for (int j = 1; j < rowIndex; j++) {
+                for (int i = j; i > 0; i--) {
                     dp[i] += dp[i - 1];
                 }
                 dp.push_back(1);
-                ans.push_back(dp);
             }
         }
-        return ans;
+        return dp;
     }
 
 private:
     bool checkConstraints(int n) {
-        if (n < 1 || n > 30) return false;
+        if (n < 0 || n > 33) return false;
         return true;
     }
 };
