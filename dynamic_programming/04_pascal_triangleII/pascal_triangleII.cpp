@@ -16,8 +16,6 @@ public:
         vector<int> dp(1, 1);
         if (rowIndex > 0) {
             dp.push_back(1);
-        }
-        if (rowIndex > 1) {
             for (int j = 1; j < rowIndex; j++) {
                 for (int i = j; i > 0; i--) {
                     dp[i] += dp[i - 1];

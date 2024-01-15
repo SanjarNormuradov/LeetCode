@@ -19,10 +19,8 @@ public:
         if (numRows > 1) {
             dp.push_back(1);
             ans.push_back(dp);
-        }
-        if (numRows > 2) {
-            for (int j = 2; j < numRows; j++) {
-                for (int i = j - 1; i > 0; i--) {
+            for (int j = 1; j < numRows - 1; j++) {
+                for (int i = j; i > 0; i--) {
                     dp[i] += dp[i - 1];
                 }
                 dp.push_back(1);

@@ -8,7 +8,6 @@ class Solution:
         dp = [1]
         if row_index > 0:
             dp.append(1)
-        if row_index > 1:
             for j in range(1, row_index):
                 for i in range(j, 0, -1):
                     dp[i] += dp[i - 1]

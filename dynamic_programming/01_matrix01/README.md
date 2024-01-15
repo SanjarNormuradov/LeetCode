@@ -27,7 +27,7 @@ Output: [[0,0,0],[0,1,0],[1,2,1]]
 # Solution
 
 ## Approach
-The BFS approach efficiently computes the shortest distance to the nearest '0' for all cells in a binary matrix. It guarantees that each cell's distance is updated correctly by using a queue to process cells in a FIFO (First-In-First-Out) manner, ensuring that closer cells are processed before farther ones. The algorithm is straightforward and runs in linear time and space relative to the size of the input matrix.
+The BFS approach efficiently computes the shortest distance to the nearest '0' for all cells in a binary matrix. It guarantees that each cell's distance is updated correctly by using a queue to process cells in a FIFO (First-In-First-Out) manner, ensuring that closer cells are processed before further ones. The algorithm is straightforward and runs in linear time and space relative to the size of the input matrix.
 __Initialization__:
 - A `dist` matrix of the same dimensions as the input matrix is created, initialized with `INT32_MAX` to represent infinity, as the initial distance to a `0` cell is unknown.
 - A queue `q` is used to perform the BFS.

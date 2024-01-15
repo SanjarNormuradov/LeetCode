@@ -12,9 +12,8 @@ class Solution:
         if num_rows > 1:
             dp.append(1)
             ans.append(copy(dp))
-        if num_rows > 2:
-            for j in range(2, num_rows):
-                for i in range(j - 1, 0, -1):
+            for j in range(1, num_rows - 1):
+                for i in range(j, 0, -1):
                     dp[i] += dp[i - 1]
                 dp.append(1)
                 ans.append(copy(dp))

@@ -37,20 +37,16 @@ private:
     bool checkConstraints(const vector<vector<int>>& image, int sr, int sc, int newColor) {
         int m = image.size(); 
         if (m == 0 || m > 50) return false;
-
         for (const auto& row : image) {
             int n = row.size();
             if (n == 0 || n > 50) return false;
-
             for (int color : row) {
                 if (color < 0 || color >= pow(2, 16)) return false;
             }
         }
-
         if (newColor < 0 || newColor >= pow(2, 16)) return false;
-
         if (sr < 0 || sr >= m || sc < 0 || sc >= image[0].size()) return false;
-
+        
         return true;
     }
 };
