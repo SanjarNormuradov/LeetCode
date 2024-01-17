@@ -10,7 +10,6 @@ build/
 *.cmake
 *.make
 Makefile
-CMake*
 
 # Ignore Cache
 CACHE*
@@ -21,5 +20,3 @@ CACHE*
 # Ignore testing log files
 *Testing/Temporary/*
 Testing/
-
-mujin/

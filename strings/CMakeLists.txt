@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.14)
+project(strings)
+ 
+# Subdirectories for each category
+add_subdirectory(01_neigh)
+add_subdirectory(02_push_pop_stack_target_n)
+add_subdirectory(03_frogs_croak)
+add_subdirectory(04_sort_vowels)
+add_subdirectory(05_bulls_n_cows)
+add_subdirectory(06_palindrome)
+add_subdirectory(07_roman_to_int)
+add_subdirectory(08_valid_word_abbreviation)
+add_subdirectory(09_synonymous_sentences)
+add_subdirectory(10_palindrome_permutation)
+add_subdirectory(11_palindrome_permutationII)
+add_subdirectory(12_valid_brackets)

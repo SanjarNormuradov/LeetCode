@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.14)
+project(arrays)
+ 
+# Subdirectories for each category
+add_subdirectory(01_flood_fill)
+add_subdirectory(02_max_monster_eliminated)
+add_subdirectory(03_restore_from_pairs)
+add_subdirectory(04_best_time2buy_sell_stock)
+add_subdirectory(05_longest_increasing_path)
+add_subdirectory(06_count_increasing_path)
+add_subdirectory(07_two_sum)
+add_subdirectory(08_unique_paths_with_obstacles)
+add_subdirectory(09_unique_paths_without_obstacles)
+add_subdirectory(10_unique_paths_with_all_cells)
