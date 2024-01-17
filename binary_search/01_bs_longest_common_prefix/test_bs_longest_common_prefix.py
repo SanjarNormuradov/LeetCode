@@ -1,5 +1,5 @@
 from unittest import TestCase, TestResult, TestLoader, TextTestRunner
-from merge_sorted_arrays import Solution
+from bs_longest_common_prefix import Solution
 from time import time
 
 from functools import wraps
@@ -40,41 +40,31 @@ def time_tests(cls):
     return cls
 
 
-class TestMergeSortedArrays(TestCase):
+class TestBSLongestCommonPrefix(TestCase):
     def setUp(self):
         # This method is called before each test
         self.solution = Solution()
 
     def test1_m3n3(self):
-        m, n = 3, 3
-        nums1, nums2 = [1, 2, 3, 0, 0, 0], [2, 5, 6]
-        expected = [1, 2, 2, 3, 5, 6]
-        self.solution.merge(nums1, m, nums2, n)
+        strs = ["flower", "flow", "flight"]
+        expected = "fl"
+        result = self.solution.longest_common_prefix(strs)
 
-        self.assertListEqual(nums1, expected)
+        self.assertEqual(result, expected)
 
     def test2_m1n0(self):
-        m, n = 1, 0
-        nums1, nums2 = [1], []
-        expected = [1]
-        self.solution.merge(nums1, m, nums2, n)
+        strs = ["dog", "racecar", "cat"]
+        expected = ""
+        result = self.solution.longest_common_prefix(strs)
 
-        self.assertListEqual(nums1, expected)
-
-    def test3_m0n1(self):
-        m, n = 0, 1
-        nums1, nums2 = [0], [1]
-        expected = [1]
-        self.solution.merge(nums1, m, nums2, n)
-
-        self.assertListEqual(nums1, expected)
+        self.assertEqual(result, expected)
 
     def tearDown(self):
         del self.solution  # Ensure the reference is deleted.
 
 
 if __name__ == '__main__':
-    suite = TestLoader().loadTestsFromTestCase(TestMergeSortedArrays)
+    suite = TestLoader().loadTestsFromTestCase(TestBSLongestCommonPrefix)
     result = CustomTestResult()
     runner = TextTestRunner(verbosity=2)
     # runner.run(suite)

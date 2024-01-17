@@ -1,4 +1,4 @@
-#include "merge_sorted_arrays.cpp"
+#include "bs_longest_common_prefix.cpp"
 #include <gtest/gtest.h>
 #include <chrono>
 #include <iostream>
@@ -47,7 +47,7 @@ public:
 };
 
 
-class TestMergeSortedArrays : public ::testing::Test {
+class TestBSLongestCommonPrefix : public ::testing::Test {
 protected:
     Solution* solution; // Each test will have its own pointer to Solution instance
 
@@ -65,31 +65,20 @@ protected:
 };
 
 
-TEST_F(TestMergeSortedArrays, test1_m3n3) { 
-    vector<int> nums1 = {1, 2, 3, 0, 0, 0}, nums2 = {2, 5, 6};
-    int m = 3, n = 3;
-    vector<int> expected = {1, 2, 2, 3, 5, 6};
-    solution->merge(nums1, m, nums2, n);
+TEST_F(TestBSLongestCommonPrefix, test1_fl) { 
+    vector<string> strs = {"flower", "flow", "flight"};
+    string expected = "fl";
+    string result = solution->longestCommonPrefix(strs);
 
-    ASSERT_EQ(expected, nums1);
+    ASSERT_EQ(expected, result);
 }
 
-TEST_F(TestMergeSortedArrays, test2_m1n0) { 
-    vector<int> nums1 = {1}, nums2 = {};
-    int m = 1, n = 0;
-    vector<int> expected = {1};
-    solution->merge(nums1, m, nums2, n);
+TEST_F(TestBSLongestCommonPrefix, test2_empty) { 
+    vector<string> strs = {"dog", "racecar", "car"};
+    string expected = "";
+    string result = solution->longestCommonPrefix(strs);
 
-    ASSERT_EQ(expected, nums1);
-}
-
-TEST_F(TestMergeSortedArrays, test3_m0n1) { 
-    vector<int> nums1 = {0}, nums2 = {1};
-    int m = 0, n = 1;
-    vector<int> expected = {1};
-    solution->merge(nums1, m, nums2, n);
-
-    ASSERT_EQ(expected, nums1);
+    ASSERT_EQ(expected, result);
 }
 
 
