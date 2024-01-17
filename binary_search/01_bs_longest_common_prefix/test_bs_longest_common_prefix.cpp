@@ -97,6 +97,14 @@ TEST_F(TestBSLongestCommonPrefix, test4_empty) {
     ASSERT_EQ(expected, result);
 }
 
+TEST_F(TestBSLongestCommonPrefix, test5_abc) { 
+    vector<string> strs = {"abca", "abc"};
+    string expected = "abc";
+    string result = solution->longestCommonPrefix(strs);
+
+    ASSERT_EQ(expected, result);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
 

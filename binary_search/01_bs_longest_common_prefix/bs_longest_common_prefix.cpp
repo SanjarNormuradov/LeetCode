@@ -19,14 +19,7 @@ public:
         for (int i = 0; i < strs.size(); i++) {
             minLen = min(static_cast<int>(strs[i].size()), minLen);
         }
-        if (all_of(strs.begin(), strs.end(), [&minLen](const string& str) {
-            return minLen == str.size();
-        })) {
-            if (all_of(strs.begin() + 1, strs.end(), [&strs](const string& str) {
-                return strs[0].find(str, 0) == 0;
-            })) return strs[0];
-        }
-        int low = 1, high = strs.size();
+        int low = 1, high = minLen;
         while (low <= high) {
             int mid = (low + high) / 2;
             if (isCommonPrefix(strs, mid)) {

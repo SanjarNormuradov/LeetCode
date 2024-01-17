@@ -9,7 +9,7 @@ class Solution:
         min_len = sys.maxsize
         for i in range(len(strs)):
             min_len = min(len(strs[i]), min_len)
-        low, high = 1, len(strs)
+        low, high = 1, min_len
         while low <= high:
             mid = (low + high) // 2
             if self._is_common_prefix(strs, mid):
