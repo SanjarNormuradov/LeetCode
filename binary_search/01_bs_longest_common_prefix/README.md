@@ -56,12 +56,14 @@ It's guaranteed that 'overtake' wouldn't happen becuase:
 ### C++ Test Times
 | Test Name | Time Spent |
 | --- | --- |
-| test1_fl | 9.21e-06 s |
-| test2_empty | 2.71e-06 s |
+| test1_fl | 1.13e-05 s |
+| test2_dogcar | 3.75e-06 s |
+| test3_flower | 4.06e-06 s |
+| test4_empty | 2.39e-06 s |
 
 ### Python Test Times
 | Test Name | Time Spent |
 | --- | --- |
-| test1_m3n3 | 4.60e-05 s |
-| test2_m1n0 | 2.57e-05 s |
+| test1_m3n3 | 3.74e-05 s |
+| test2_m1n0 | 1.69e-05 s |
 
