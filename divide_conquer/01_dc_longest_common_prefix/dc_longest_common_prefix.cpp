@@ -15,20 +15,7 @@ public:
         if (!checkConstraints(strs)) {
             throw std::runtime_error("Constraints violated");
         }
-        int minLen = INT_MAX;
-        for (int i = 0; i < strs.size(); i++) {
-            minLen = min(static_cast<int>(strs[i].size()), minLen);
-        }
-        int low = 1, high = strs.size();
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            if (isCommonPrefix(strs, mid)) {
-                low = mid + 1;
-            } else {
-                high = mid - 1;
-            }
-        }
-        return strs[0].substr(0, (low + high) / 2);
+        return lcp(strs, 0, strs.size() - 1);
     }
 
 private:
@@ -39,11 +26,26 @@ private:
         }
         return true;
     }
-    bool isCommonPrefix(const vector<string>& strs, int len) {
-        string minStr = strs[0].substr(0, len);
-        if (!all_of(strs.begin() + 1, strs.end(), [&minStr](const string& str) {
-            return str.find(minStr, 0) == 0;
-        })) return false;
-        return true;
+    string lcp(vector<string>& strs, int left, int right) {
+        if (left == right) {
+            // conquer
+            return strs[left];
+        } else {
+            // divide
+            int mid = (left + right) / 2;
+            string lcpLeft = lcp(strs, left, mid);
+            string lcpRight = lcp(strs, mid + 1, right);
+            return commonPrefix(lcpLeft, lcpRight);
+        }
+    }
+    string commonPrefix(const string& left, const string& right) {
+        auto pair = mismatch(left.begin(), left.end(), right.begin(), right.end());
+        int minLen = pair.first - left.begin();
+        return left.substr(0, minLen);
     }
 };
+
+// int main(int argc, char **argv) {
+//     Solution* solution;
+//     return 0;
+// }
