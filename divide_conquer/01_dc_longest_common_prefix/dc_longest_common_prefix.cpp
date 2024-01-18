@@ -23,6 +23,9 @@ private:
         if (strs.size() < 1 || strs.size() > 200) return false;
         for (int i = 0; i < strs.size(); i++) {
             if (strs[i].size() < 0 || strs[i].size() > 200) return false;
+            for (auto& ch : strs[i]) {
+                if (ch < 'A' || (ch > 'Z' && ch < 'a') || ch > 'z') return false;
+            }
         }
         return true;
     }

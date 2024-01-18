@@ -73,7 +73,7 @@ TEST_F(TestDCLongestCommonPrefix, test1_fl) {
     ASSERT_EQ(expected, result);
 }
 
-TEST_F(TestDCLongestCommonPrefix, test2_empty) { 
+TEST_F(TestDCLongestCommonPrefix, test2_dogcar) { 
     vector<string> strs = {"dog", "racecar", "car"};
     string expected = "";
     string result = solution->longestCommonPrefix(strs);
@@ -81,6 +81,29 @@ TEST_F(TestDCLongestCommonPrefix, test2_empty) {
     ASSERT_EQ(expected, result);
 }
 
+TEST_F(TestDCLongestCommonPrefix, test3_flower) { 
+    vector<string> strs = {"flower", "flower", "flower", "flower"};
+    string expected = "flower";
+    string result = solution->longestCommonPrefix(strs);
+
+    ASSERT_EQ(expected, result);
+}
+
+TEST_F(TestDCLongestCommonPrefix, test4_empty) { 
+    vector<string> strs = {""};
+    string expected = "";
+    string result = solution->longestCommonPrefix(strs);
+
+    ASSERT_EQ(expected, result);
+}
+
+TEST_F(TestDCLongestCommonPrefix, test5_abc) { 
+    vector<string> strs = {"abca", "abc"};
+    string expected = "abc";
+    string result = solution->longestCommonPrefix(strs);
+
+    ASSERT_EQ(expected, result);
+}
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);

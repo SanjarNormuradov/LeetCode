@@ -45,16 +45,37 @@ class TestBSLongestCommonPrefix(TestCase):
         # This method is called before each test
         self.solution = Solution()
 
-    def test1_m3n3(self):
+    def test1_fl(self):
         strs = ["flower", "flow", "flight"]
         expected = "fl"
         result = self.solution.longest_common_prefix(strs)
 
         self.assertEqual(result, expected)
 
-    def test2_m1n0(self):
+    def test2_dogcar(self):
         strs = ["dog", "racecar", "cat"]
         expected = ""
+        result = self.solution.longest_common_prefix(strs)
+
+        self.assertEqual(result, expected)
+
+    def test3_flower(self):
+        strs = ["flower", "flower", "flower", "flower"]
+        expected = "flower"
+        result = self.solution.longest_common_prefix(strs)
+
+        self.assertEqual(result, expected)
+
+    def test4_empty(self):
+        strs = [""]
+        expected = ""
+        result = self.solution.longest_common_prefix(strs)
+
+        self.assertEqual(result, expected)
+
+    def test5_abc(self):
+        strs = ["abca", "abc"]
+        expected = "abc"
         result = self.solution.longest_common_prefix(strs)
 
         self.assertEqual(result, expected)

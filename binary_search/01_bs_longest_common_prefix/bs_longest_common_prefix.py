@@ -24,6 +24,9 @@ class Solution:
         for i in range(len(strs)):
             if len(strs[i]) < 0 or len(strs[i]) > 200:
                 return False
+            for ch in strs[i]:
+                if ch < 'A' or (ch > 'Z' and ch < 'a') or ch > 'z':
+                    return False
         return True
 
     def _is_common_prefix(self, strs: List[str], len: int) -> bool:
