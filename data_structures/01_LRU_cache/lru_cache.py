@@ -2,9 +2,7 @@ from typing import Union, Dict
 
 
 class Node:
-    def __init__(self,
-                 key: int, value: int,
-                 ) -> None:
+    def __init__(self, key: int, value: int) -> None:
         self.key = key
         self.value = value
         self._next: Union['Node', None] = None
@@ -55,9 +53,7 @@ class Node:
 
 
 class LRUCache:
-    def __init__(self,
-                 capacity: int = 10,
-                 ) -> None:
+    def __init__(self, capacity: int = 10) -> None:
         self.capacity = capacity
         self.head: Union[Node, None] = None
         self.tail: Union[Node, None] = None
@@ -75,9 +71,7 @@ class LRUCache:
         self._capacity = new_capacity
 
     """ INSTANCE METHODS """
-    def insert_at_head(self,
-                       node: Node,
-                       ) -> None:
+    def insert_at_head(self, node: Node) -> None:
         node.next = self.head
         if self.head is not None:
             self.head.prev = node
@@ -86,9 +80,7 @@ class LRUCache:
         if self.tail is None:
             self.tail = node
 
-    def unlink_node(self,
-                    node: Node,
-                    ) -> None:
+    def unlink_node(self, node: Node) -> None:
         if node.next is not None:
             node.next.prev = node.prev
         else:
@@ -98,9 +90,7 @@ class LRUCache:
         else:
             self.head = node.next
 
-    def get(self,
-            key: int,
-            ) -> int:
+    def get(self, key: int) -> int:
         if key in self.key_to_node_dict.keys():
             if self.key_to_node_dict[key] != self.head:
                 self.unlink_node(self.key_to_node_dict[key])
@@ -110,9 +100,7 @@ class LRUCache:
         else:
             return -1
 
-    def put(self,
-            key: int, value: int,
-            ) -> None:
+    def put(self, key: int, value: int) -> None:
         if key in self.key_to_node_dict.keys():
             self.key_to_node_dict[key].value = value
             if self.key_to_node_dict[key] != self.head:
